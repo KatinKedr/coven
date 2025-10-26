@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coven ✦ Game — Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/story.css" />
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Назад</a>
+  <div class="fog-drift"></div>
+  <div class="fog-overlay"></div>
+
+  <div id="storyScreen" class="content-box">
+    <span class="corner-symbol tl">✦</span>
+    <span class="corner-symbol tr">⛤</span>
+    <span class="corner-symbol bl">☽</span>
+    <span class="corner-symbol br">✶</span>
+    <h2>Передісторія</h2>
+    <p>
+      У глибині стародавнього лісу, серед спотворених дерев і шепоту нічного вітру,
+      зібрався Ковен. П’ять відьом повернулися до старого храму, щоб завершити ритуал,
+      який було розпочато сотні років тому. Кожен крок, кожне слово має значення.
+      Але перш ніж почати гру, ти повинен дізнатися її правила…
+    </p>
+    <button id="nextBtn" class="play-btn" type="button">Далі</button>
+  </div>
+
+  <script>
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      window.location.href = 'rules.html';
+    });
+  </script>
+</body>
+</html>
