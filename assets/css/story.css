@@ -103,11 +103,8 @@ body {
   border: 2px solid #fb1f17;
   border-radius: 25px;
   box-shadow: 0 0 40px rgba(251, 31, 23, 0.5);
-  width: 60vw;
-  height: 60vw;
-  max-height: 60vh;
-  max-width: 60vh;
-  padding: 40px 50px;
+  width: min(520px, 80vw);
+  padding: 70px 60px 90px;
   text-align: center;
   z-index: 20;
   animation: fadeIn 2s ease-in forwards;
@@ -119,9 +116,6 @@ body {
 
 .tarot-card {
   width: min(560px, 90vw);
-  max-width: none;
-  height: auto;
-  max-height: none;
   padding: 4.6rem 3.8rem 4rem;
   border-radius: 28px;
   border: 1px solid rgba(210, 182, 125, 0.55);
