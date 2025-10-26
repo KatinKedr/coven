@@ -101,135 +101,133 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  width: min(430px, 82vw);
-  padding: 3.2rem 2.8rem 3.4rem;
+  gap: 2rem;
+  width: min(520px, 88vw);
+  padding: 3rem 2.6rem;
   text-align: center;
-  border-radius: 30px;
-  border: 2px solid rgba(255, 63, 52, 0.68);
-  background: radial-gradient(120% 140% at 50% 0%, rgba(35, 4, 10, 0.92), rgba(9, 1, 12, 0.95) 55%, rgba(4, 0, 10, 0.98));
+  border-radius: 28px;
+  border: 2px solid rgba(251, 31, 23, 0.82);
+  background: radial-gradient(140% 120% at 50% 0%, rgba(62, 137, 137, 0.32), rgba(12, 60, 74, 0.94) 45%, rgba(98, 10, 7, 0.96) 100%);
   box-shadow:
-    0 20px 55px rgba(0, 0, 0, 0.62),
-    0 0 42px rgba(255, 46, 39, 0.32);
+    0 24px 55px rgba(0, 0, 0, 0.65),
+    0 0 40px rgba(251, 31, 23, 0.35);
   backdrop-filter: blur(6px);
   z-index: 20;
-  animation: fadeIn 2s ease-in forwards;
+  animation: fadeIn 1.6s ease-in forwards;
 }
 
-.arcane-panel::before {
+.tarot-card::before {
   content: '';
   position: absolute;
   inset: 16px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 112, 96, 0.28);
-  background: radial-gradient(160% 140% at 50% 0%, rgba(70, 8, 20, 0.5), rgba(18, 4, 20, 0.3) 45%, rgba(8, 2, 14, 0.9));
-  box-shadow:
-    inset 0 0 28px rgba(255, 102, 90, 0.14),
-    inset 0 0 55px rgba(24, 0, 22, 0.5);
+  border-radius: 20px;
+  border: 1px solid rgba(62, 137, 137, 0.42);
+  background: linear-gradient(180deg, rgba(12, 60, 74, 0.18), rgba(98, 10, 7, 0));
+  box-shadow: inset 0 0 32px rgba(12, 60, 74, 0.32);
   pointer-events: none;
   z-index: 0;
 }
 
-.arcane-panel::after {
+.tarot-card::after {
   content: '';
   position: absolute;
-  inset: -8px;
-  border-radius: 36px;
-  background: radial-gradient(140% 140% at 50% 0%, rgba(255, 58, 46, 0.18), rgba(8, 0, 12, 0));
-  opacity: 0.9;
+  inset: -10px;
+  border-radius: 34px;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(251, 31, 23, 0.18), rgba(98, 10, 7, 0));
+  opacity: 0.85;
   pointer-events: none;
   z-index: -1;
 }
 
-.panel-corner {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 214, 208, 0.85), rgba(255, 82, 69, 0.6) 45%, rgba(120, 0, 12, 0.85) 78%, rgba(12, 0, 8, 0.95));
-  box-shadow: 0 0 20px rgba(255, 58, 46, 0.5);
-  border: 1px solid rgba(255, 118, 104, 0.42);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.panel-corner::after {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 228, 220, 0.85), rgba(255, 81, 67, 0.4));
-  opacity: 0.8;
-}
-
-.panel-corner--tl {
-  top: -18px;
-  left: -18px;
-}
-
-.panel-corner--tr {
-  top: -18px;
-  right: -18px;
-}
-
-.panel-corner--bl {
-  bottom: -18px;
-  left: -18px;
-}
-
-.panel-corner--br {
-  bottom: -18px;
-  right: -18px;
-}
-
-.panel-header {
+.tarot-card__sigil,
+.tarot-card__footer {
   position: relative;
   z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #FB1F17;
 }
 
-.panel-title {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 2.7rem);
-  letter-spacing: 0.18em;
-  color: #ff5e54;
-  text-transform: uppercase;
-  text-shadow:
-    0 0 28px rgba(255, 71, 58, 0.75),
-    0 0 12px rgba(255, 118, 104, 0.6);
-}
-
-.panel-title::after {
+.tarot-card__sigil::before,
+.tarot-card__sigil::after,
+.tarot-card__footer::before,
+.tarot-card__footer::after {
   content: '';
-  display: block;
-  width: 96px;
+  flex: 1;
   height: 1px;
-  margin: 0.8rem auto 0;
-  background: linear-gradient(90deg, rgba(255, 94, 84, 0), rgba(255, 94, 84, 0.75), rgba(255, 94, 84, 0));
-  box-shadow: 0 0 22px rgba(255, 80, 70, 0.45);
+  background: linear-gradient(90deg, rgba(251, 31, 23, 0), rgba(251, 31, 23, 0.85), rgba(251, 31, 23, 0));
 }
 
-.panel-body {
+.tarot-card__sigil span,
+.tarot-card__footer span {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(251, 31, 23, 0.8);
+  background: radial-gradient(circle, rgba(251, 31, 23, 0.32), rgba(98, 10, 7, 0.9));
+  box-shadow: 0 0 10px rgba(251, 31, 23, 0.45);
+}
+
+.tarot-card__body {
   position: relative;
   z-index: 1;
-  max-width: 26rem;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
-.panel-body p {
+.tarot-card__title {
   margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.75;
-  color: rgba(243, 244, 249, 0.9);
-  text-shadow:
-    0 0 16px rgba(5, 0, 12, 0.8),
-    0 0 26px rgba(45, 0, 15, 0.5);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: 0.14em;
+  color: #DBF9F4;
+  text-transform: uppercase;
 }
 
-.play-btn {
+.tarot-card__subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: rgba(219, 249, 244, 0.68);
+  text-transform: uppercase;
+}
+
+.tarot-card__body p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: rgba(219, 249, 244, 0.92);
+}
+
+.tarot-card__action {
   position: relative;
   z-index: 1;
   padding: 0.85rem 2.8rem;
   border-radius: 18px;
+  font-size: 1.2rem;
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: 0.22em;
+  color: #0C3C4A;
+  background: linear-gradient(180deg, #FB1F17, #620A07);
+  border: 1px solid rgba(251, 31, 23, 0.78);
+  box-shadow:
+    0 12px 26px rgba(98, 10, 7, 0.55),
+    0 0 24px rgba(251, 31, 23, 0.45);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-transform: uppercase;
+}
+
+.tarot-card__action:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 34px rgba(98, 10, 7, 0.6),
+    0 0 30px rgba(251, 31, 23, 0.52);
   font-size: 1.4rem;
   font-family: 'Cinzel Decorative', serif;
   letter-spacing: 0.18em;
@@ -256,6 +254,12 @@ body {
   position: absolute;
   top: 30px;
   left: 30px;
+  color: rgba(219, 249, 244, 0.86);
+  font-size: 1.05rem;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(12, 60, 74, 0.7);
   color: #e9cfa5;
   font-size: 1.05rem;
   text-decoration: none;
@@ -266,7 +270,19 @@ body {
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  color: #DBF9F4;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
