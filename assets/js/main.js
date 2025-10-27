@@ -17,8 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, 4200);
 
-  playBtn?.addEventListener('click', () => {
-    window.location.href = 'pages/story.html';
+  playBtn?.addEventListener('click', (event) => {
+    const targetHref = playBtn.getAttribute('href') || 'pages/story.html';
+
+    if (playBtn.tagName !== 'A') {
+      event.preventDefault();
+      window.location.assign(targetHref);
+    }
   });
 
   fullscreenBtn?.addEventListener('click', async () => {
