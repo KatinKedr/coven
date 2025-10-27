@@ -14,7 +14,7 @@
   <div class="fog-drift"></div>
   <div class="fog-overlay"></div>
 
-  <div class="content-box tarot-card">
+  <div class="content-box tarot-card tarot-card--rules">
     <div class="tarot-card__sigil" aria-hidden="true">
       <span></span>
     </div>
@@ -43,6 +43,15 @@
     <div class="tarot-card__footer" aria-hidden="true">
       <span></span>
     </div>
+    <button id="startGameBtn" class="tarot-card__action" type="button">Начать игру</button>
   </div>
+  <script>
+    const startGameBtn = document.getElementById('startGameBtn');
+    if (startGameBtn) {
+      startGameBtn.addEventListener('click', () => {
+        window.location.href = '../index.html#game-start';
+      });
+    }
+  </script>
 </body>
 </html>

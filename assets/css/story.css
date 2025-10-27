@@ -118,6 +118,69 @@ body {
   animation: fadeIn 1.6s ease-in forwards;
 }
 
+.tarot-card--rules {
+  width: min(1020px, 92vw);
+  padding: clamp(2.8rem, 6vw, 3.9rem) clamp(2.2rem, 6vw, 4.6rem);
+  gap: clamp(2.1rem, 4vw, 2.9rem);
+  align-items: stretch;
+}
+
+.tarot-card--rules .tarot-card__body {
+  max-width: none;
+  width: 100%;
+  text-align: left;
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.tarot-card--rules .tarot-card__body p,
+.tarot-card--rules .tarot-card__list {
+  font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+  line-height: 1.68;
+}
+
+.tarot-card--rules .tarot-card__list {
+  margin-top: 0.4rem;
+  gap: clamp(0.45rem, 1.4vw, 0.85rem);
+}
+
+.tarot-card--rules .tarot-card__note {
+  margin-top: 0.6rem;
+}
+
+.tarot-card--rules .tarot-card__action {
+  align-self: center;
+  margin-top: clamp(0.5rem, 2vw, 1.4rem);
+  padding-inline: clamp(2.6rem, 6vw, 3.6rem);
+}
+
+@media (max-width: 860px) {
+  .tarot-card--rules {
+    width: min(620px, 94vw);
+    padding: 2.6rem 2.2rem 3rem;
+  }
+
+  .tarot-card--rules .tarot-card__body {
+    gap: 1rem;
+  }
+
+  .tarot-card--rules .tarot-card__body p,
+  .tarot-card--rules .tarot-card__list {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+}
+
+@media (max-width: 540px) {
+  .tarot-card--rules {
+    width: min(520px, 90vw);
+    padding: 2.4rem 1.8rem 2.8rem;
+  }
+
+  .tarot-card--rules .tarot-card__body {
+    text-align: left;
+  }
+}
+
 .tarot-card::before {
   content: '';
   position: absolute;
