@@ -216,6 +216,7 @@ body {
   text-shadow:
     0 0 20px rgba(251, 31, 23, 0.6),
     0 0 40px rgba(251, 31, 23, 0.35);
+  text-transform: uppercase;
 }
 
 .tarot-card__content {
