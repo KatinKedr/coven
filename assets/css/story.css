@@ -181,6 +181,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
+  text-align: left;
 }
 
 .tarot-card__title {
@@ -201,9 +202,36 @@ body {
 
 .tarot-card__body p {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.72;
+  font-size: 1.02rem;
+  line-height: 1.68;
   color: rgba(219, 249, 244, 0.92);
+}
+
+.tarot-card__body p + p {
+  margin-top: 0.6rem;
+}
+
+.tarot-card__list {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(219, 249, 244, 0.92);
+}
+
+.tarot-card__list strong {
+  color: #FB1F17;
+  letter-spacing: 0.08em;
+}
+
+.tarot-card__note {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(219, 249, 244, 0.76);
 }
 
 .tarot-card__action {
