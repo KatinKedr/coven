@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 4200);
 
   playBtn?.addEventListener('click', (event) => {
-    const targetHref = playBtn.getAttribute('href') || 'pages/story.html';
+    const rawTarget =
+      playBtn.getAttribute('href') || playBtn.dataset.target || 'pages/story.html';
+    const resolvedTarget = new URL(rawTarget, window.location.href).href;
 
-    if (playBtn.tagName !== 'A') {
-      event.preventDefault();
-      window.location.assign(targetHref);
-    }
+    event.preventDefault();
+    window.location.assign(resolvedTarget);
   });
 
   fullscreenBtn?.addEventListener('click', async () => {
