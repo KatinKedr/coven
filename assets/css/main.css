@@ -167,6 +167,7 @@ h1 {
   z-index: 50;
   opacity: 0;
   pointer-events: none;
+  text-decoration: none;
 }
 
 .play-btn.show {
