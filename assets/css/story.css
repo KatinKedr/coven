@@ -169,6 +169,22 @@ body.rules-page .content-box {
     width: min(92vw, 1040px);
     max-height: min(84vh, 720px);
   }
+
+  .tarot-card--rules .tarot-card__body {
+    text-align: left;
+  }
+}
+
+.tarot-card::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(62, 137, 137, 0.42);
+  background: linear-gradient(180deg, rgba(12, 60, 74, 0.18), rgba(98, 10, 7, 0));
+  box-shadow: inset 0 0 32px rgba(12, 60, 74, 0.32);
+  pointer-events: none;
+  z-index: 0;
 }
 
 @media (max-width: 860px) {
