@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/rules.css" />
+  <link rel="stylesheet" href="../assets/css/cursor.css" />
 </head>
 <body>
   <a href="../index.html" class="back-link">← НАЗАД</a>
@@ -20,7 +21,8 @@
     </div>
     <div class="tarot-card__body">
       <header class="tarot-card__header">
-        <h2 class="tarot-card__title">ПРАВИЛА ИГРЫ</h2>
+        <p class="tarot-card__eyebrow">Кодекс кола</p>
+        <h2 class="tarot-card__title">ПРАВИЛА ГРИ</h2>
       </header>
       <div class="tarot-card__content">
         <div class="tarot-card__column tarot-card__column--primary">
@@ -52,6 +54,7 @@
     </div>
     <button id="startGameBtn" class="tarot-card__action" type="button">Начать игру</button>
   </div>
+  <script src="../assets/js/cursor.js" defer></script>
   <script>
     const startGameBtn = document.getElementById('startGameBtn');
     if (startGameBtn) {
