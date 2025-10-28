@@ -12,6 +12,17 @@
   .mist-canvas {
     display: none;
   }
+
+  html,
+  body {
+    cursor: auto;
+  }
+}
+
+@media (pointer: fine) {
+  html,
+  body {
+    cursor: url('../../image/cursore.svg') 8 4, auto;
 }
 
 @media (pointer: fine) {
@@ -25,6 +36,10 @@
   .tarot-card__action,
   .fullscreen-btn,
   .back-link,
+  a,
+  canvas,
+  .mist-canvas {
+    cursor: inherit;
   a {
     cursor: inherit;
   body {
