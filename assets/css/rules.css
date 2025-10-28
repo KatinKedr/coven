@@ -291,6 +291,7 @@ body {
   z-index: 1;
 }
 
+
 .tarot-card__action:hover {
   transform: translateY(-4px);
   border-color: rgba(219, 249, 244, 0.85);
