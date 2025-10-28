@@ -49,20 +49,19 @@
     constructor(x, y) {
       this.x = x;
       this.y = y;
-      this.size = 45 + Math.random() * 55;
-      this.alpha = 0.45 + Math.random() * 0.25;
+      this.size = 40 + Math.random() * 45;
+      this.alpha = 0.16 + Math.random() * 0.1;
       this.life = 1;
-      this.decay = 0.012 + Math.random() * 0.01;
-      this.dx = (Math.random() - 0.5) * 0.9;
-      this.dy = (Math.random() - 0.5) * 0.9;
+      this.decay = 0.018 + Math.random() * 0.012;
+      this.dx = (Math.random() - 0.5) * 0.7;
+      this.dy = (Math.random() - 0.5) * 0.7;
       this.rotation = Math.random() * Math.PI * 2;
-      this.rotationSpeed = (Math.random() - 0.5) * 0.018;
+      this.rotationSpeed = (Math.random() - 0.5) * 0.012;
       this.palette = palette[Math.floor(Math.random() * palette.length)];
-      this.spark = Math.random() < 0.2;
-      this.aspect = this.spark ? 1 : 0.65 + Math.random() * 0.2;
-      this.coreAlpha = 0.7 + Math.random() * 0.2;
-      this.midAlpha = 0.55 + Math.random() * 0.25;
-      this.edgeAlpha = 0.25 + Math.random() * 0.2;
+      this.aspect = 0.7 + Math.random() * 0.25;
+      this.coreAlpha = 0.28 + Math.random() * 0.06;
+      this.midAlpha = 0.16 + Math.random() * 0.07;
+      this.edgeAlpha = 0.08 + Math.random() * 0.05;
     }
 
     update() {
@@ -79,16 +78,15 @@
       ctx.save();
       ctx.translate(this.x, this.y);
       ctx.rotate(this.rotation);
-      ctx.filter = 'blur(14px)';
+      ctx.filter = 'blur(18px)';
       ctx.globalAlpha = this.alpha * fade;
 
-      const gradient = ctx.createRadialGradient(0, 0, this.size * 0.18, 0, 0, this.size);
+      const gradient = ctx.createRadialGradient(0, 0, this.size * 0.15, 0, 0, this.size);
       gradient.addColorStop(0, `rgba(219, 249, 244, ${this.coreAlpha})`); // #DBF9F4
-      gradient.addColorStop(0.35, `rgba(${r}, ${g}, ${b}, ${this.midAlpha})`);
-      gradient.addColorStop(0.75, `rgba(${Math.max(r - 20, 0)}, ${Math.max(g - 20, 0)}, ${Math.max(
-        b - 10,
-        0
-      )}, ${this.edgeAlpha})`);
+      gradient.addColorStop(0.45, `rgba(${Math.round((r + 219) / 2)}, ${Math.round((g + 249) / 2)}, ${Math.round(
+        (b + 244) / 2
+      )}, ${this.midAlpha})`);
+      gradient.addColorStop(0.82, `rgba(${r}, ${g}, ${b}, ${this.edgeAlpha})`);
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       ctx.fillStyle = gradient;
@@ -144,11 +142,12 @@
   }
 
   window.addEventListener('pointermove', (event) => {
-    addParticles(event.clientX, event.clientY, 3);
+    addParticles(event.clientX, event.clientY, 2);
     ensureAnimation();
   });
 
   window.addEventListener('pointerdown', (event) => {
+    addParticles(event.clientX, event.clientY, 4);
     addParticles(event.clientX, event.clientY, 5);
     ensureAnimation();
   });
