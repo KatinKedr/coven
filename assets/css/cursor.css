@@ -1,0 +1,39 @@
+.mist-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (pointer: coarse), (hover: none) {
+  .mist-canvas {
+    display: none;
+  }
+
+  html,
+  body {
+    cursor: auto;
+  }
+}
+
+@media (pointer: fine) {
+  html,
+  body {
+    cursor: url('../../image/cursore.svg') 8 4, auto;
+  }
+
+  button,
+  .play-btn,
+  .story-button,
+  .tarot-card__action,
+  .fullscreen-btn,
+  .back-link,
+  a,
+  canvas,
+  .mist-canvas {
+    cursor: inherit;
+  }
+}
