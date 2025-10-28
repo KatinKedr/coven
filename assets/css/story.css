@@ -204,7 +204,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: auto;
-  margin-bottom: clamp(0.6rem, 2vw, 1.2rem);
+  margin-bottom: clamp(0.5rem, 2vw, 1.2rem);
   padding: 1rem clamp(2.6rem, 6.4vw, 3.4rem);
   min-width: clamp(240px, 40vw, 320px);
   border-radius: 999px;
