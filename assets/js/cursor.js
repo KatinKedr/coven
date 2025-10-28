@@ -148,6 +148,7 @@
 
   window.addEventListener('pointerdown', (event) => {
     addParticles(event.clientX, event.clientY, 4);
+    addParticles(event.clientX, event.clientY, 5);
     ensureAnimation();
   });
 
