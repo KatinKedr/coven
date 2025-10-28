@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     } catch (error) {
-      console.warn('Не вдалося завантажити попередні імена:', error);
+      console.warn('Не удалось загрузить сохранённые имена:', error);
     }
   }
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (firstEmptyIndex !== -1) {
       if (errorEl) {
-        errorEl.textContent = 'Заповніть, будь ласка, всі імена.';
+        errorEl.textContent = 'Пожалуйста, заполните все имена.';
       }
       inputs[firstEmptyIndex].focus();
       return;
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (continueBtn) {
       continueBtn.disabled = true;
       continueBtn.classList.add('is-submitting');
-      continueBtn.textContent = 'Зачекай…';
+      continueBtn.textContent = 'Подожди…';
     }
 
     const target = continueBtn?.dataset?.next;
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setTimeout(() => {
       if (continueBtn) {
         continueBtn.classList.remove('is-submitting');
-        continueBtn.textContent = 'Продовжити';
+        continueBtn.textContent = 'Продолжить';
         continueBtn.disabled = false;
       }
 

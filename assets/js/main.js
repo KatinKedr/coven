@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title.appendChild(span);
 
       if (index === text.length - 1) {
-        setTimeout(() => playBtn.classList.add('show'), (index + 1) * 1000 + 800);
+        setTimeout(() => playBtn.classList.add('is-visible'), (index + 1) * 1000 + 800);
       }
     });
   }, 4200);
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await document.exitFullscreen();
       }
     } catch (error) {
-      console.error('Не вдалося перемкнути повноекранний режим:', error);
+      console.error('Не удалось переключить полноэкранный режим:', error);
     }
   });
 });

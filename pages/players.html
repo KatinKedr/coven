@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coven ✦ Game — Players</title>
+  <title>Coven ✦ Игра — Участницы</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/players.css" />
   <link rel="stylesheet" href="../assets/css/cursor.css" />
 </head>
@@ -17,42 +18,42 @@
 
   <main class="players-screen" role="main">
     <header class="players-intro">
-      <p class="players-intro__eyebrow">Підготовка до ритуалу</p>
-      <h1 class="players-intro__title">Обери своїх сестричок</h1>
+      <p class="players-intro__eyebrow">Подготовка к ритуалу</p>
+      <h1 class="players-intro__title">Выбери своих сестёр</h1>
       <p class="players-intro__subtitle">
-        Запиши імена п'яти учасниць, що зійдуться сьогодні ввечері у ковені. Ми збережемо їх, щоб
-        кожна роль та випробування знайшли свою володарку.
+        Запиши имена пяти участниц, которые соберутся сегодня вечером в ковене. Мы сохраним их,
+        чтобы каждая роль и испытание нашли свою хозяйку.
       </p>
     </header>
 
     <form class="players-form" novalidate>
       <div class="players-grid">
         <label class="player-field">
-          <span>Гравчиня 1</span>
-          <input type="text" name="player-1" placeholder="Ім'я" autocomplete="off" required autofocus>
+          <span>Участница 1</span>
+          <input type="text" name="player-1" placeholder="Имя" autocomplete="off" required autofocus>
         </label>
         <label class="player-field">
-          <span>Гравчиня 2</span>
-          <input type="text" name="player-2" placeholder="Ім'я" autocomplete="off" required>
+          <span>Участница 2</span>
+          <input type="text" name="player-2" placeholder="Имя" autocomplete="off" required>
         </label>
         <label class="player-field">
-          <span>Гравчиня 3</span>
-          <input type="text" name="player-3" placeholder="Ім'я" autocomplete="off" required>
+          <span>Участница 3</span>
+          <input type="text" name="player-3" placeholder="Имя" autocomplete="off" required>
         </label>
         <label class="player-field">
-          <span>Гравчиня 4</span>
-          <input type="text" name="player-4" placeholder="Ім'я" autocomplete="off" required>
+          <span>Участница 4</span>
+          <input type="text" name="player-4" placeholder="Имя" autocomplete="off" required>
         </label>
         <label class="player-field">
-          <span>Гравчиня 5</span>
-          <input type="text" name="player-5" placeholder="Ім'я" autocomplete="off" required>
+          <span>Участница 5</span>
+          <input type="text" name="player-5" placeholder="Имя" autocomplete="off" required>
         </label>
       </div>
 
       <div class="players-actions">
         <p class="players-error" role="status" aria-live="polite"></p>
         <button id="continueBtn" class="coven-button" type="submit" data-next="../index.html#game-start">
-          Продовжити
+          Продолжить
         </button>
       </div>
     </form>

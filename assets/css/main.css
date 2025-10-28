@@ -145,51 +145,9 @@ h1 {
   }
 }
 
-.play-btn {
-  background-color: #620A07;
-  border: 3px solid #FB1F17;
-  color: #FB1F17;
-  width: 260px;
-  height: 120px;
-  border-radius: 60px;
-  cursor: pointer;
-  font-size: 4rem;
-  letter-spacing: 0.1em;
-  font-family: 'Cinzel Decorative', serif;
-  transition: all 0.4s ease;
-  box-shadow: 0 0 25px rgba(251, 31, 23, 0.6);
-  text-shadow: 0 0 10px #FB1F17;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.intro .coven-button--hero {
   margin-top: 8rem;
-  animation: pulse 3s infinite ease-in-out;
-  z-index: 50;
-  opacity: 0;
-  pointer-events: none;
-  text-decoration: none;
-}
-
-.play-btn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 25px rgba(251, 31, 23, 0.6);
-  }
-
-  50% {
-    box-shadow: 0 0 45px rgba(251, 31, 23, 0.9);
-  }
-}
-
-.play-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 50px #FB1F17, 0 0 100px #FB1F17;
-  background-color: #620A07;
+  text-shadow: 0 0 10px #FB1F17;
 }
 
 .fullscreen-btn {
