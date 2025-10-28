@@ -23,6 +23,11 @@
   html,
   body {
     cursor: url('../../image/cursore.svg') 8 4, auto;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: url('../../image/cursore.svg') 6 2, auto;
   }
 
   button,
@@ -35,5 +40,13 @@
   canvas,
   .mist-canvas {
     cursor: inherit;
+  a {
+    cursor: inherit;
+  body {
+    cursor: auto;
+  }
+
+  .mist-canvas {
+    display: none;
   }
 }
