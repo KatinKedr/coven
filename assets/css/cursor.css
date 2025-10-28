@@ -1,0 +1,25 @@
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+.mist-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (pointer: coarse), (hover: none) {
+  body {
+    cursor: auto;
+  }
+
+  .mist-canvas {
+    display: none;
+  }
+}
