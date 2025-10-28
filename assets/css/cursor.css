@@ -27,5 +27,11 @@
   .back-link,
   a {
     cursor: inherit;
+  body {
+    cursor: auto;
+  }
+
+  .mist-canvas {
+    display: none;
   }
 }
