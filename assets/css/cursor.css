@@ -32,6 +32,10 @@
   .fullscreen-btn,
   .back-link,
   a,
+  input,
+  textarea,
+  select,
+  label,
   canvas,
   .mist-canvas {
     cursor: inherit;
