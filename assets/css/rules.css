@@ -272,6 +272,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: clamp(1rem, 2.2vw, 1.6rem);
   padding: 0.9rem 2.8rem;
   border-radius: 999px;
   border: 2px solid rgba(251, 31, 23, 0.82);
