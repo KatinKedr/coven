@@ -597,6 +597,7 @@ body::before {
     align-items: center;
     gap: clamp(1.4rem, 4vh, 2rem);
   }
+}
 
   .roles-altar {
     order: 2;
