@@ -58,7 +58,8 @@ const assignRoleToPlayer = (playerEl, role) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const playersContainer = document.querySelector('.roles-players');
+  const leftPlayersContainer = document.querySelector('.roles-players--left');
+  const rightPlayersContainer = document.querySelector('.roles-players--right');
   const instructionEl = document.querySelector('.roles-instruction');
   const cardsContainer = document.querySelector('.roles-cards');
   const continueBtn = document.querySelector('.roles-continue');
@@ -66,7 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupName = popup?.querySelector('.role-popup__name');
   const popupHint = popup?.querySelector('.role-popup__hint');
 
-  if (!playersContainer || !cardsContainer || !popup || !popupName || !popupHint) {
+  if (
+    !leftPlayersContainer ||
+    !rightPlayersContainer ||
+    !cardsContainer ||
+    !popup ||
+    !popupName ||
+    !popupHint
+  ) {
     return;
   }
 
@@ -107,22 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
   ]);
 
   const totalPlayers = storedNames.length;
-  playersContainer.dataset.count = String(totalPlayers);
+  const midpoint = totalPlayers <= 3 ? totalPlayers : Math.ceil(totalPlayers / 2);
 
   const playerElements = storedNames.map((name, index) => {
     const element = createPlayerElement(name);
 
-    if (totalPlayers > 2) {
-      const angleStep = 360 / totalPlayers;
-      const baseAngle = -90;
-      const angle = baseAngle + angleStep * index;
-      element.style.setProperty('--player-angle', `${angle}deg`);
-      element.style.setProperty('--player-angle-inverse', `${-angle}deg`);
-    }
-
-    playersContainer.append(element);
+    const targetContainer = index < midpoint ? leftPlayersContainer : rightPlayersContainer;
+    targetContainer.append(element);
     return element;
   });
+
+  const stage = document.querySelector('.roles-stage');
+  if (stage && rightPlayersContainer.childElementCount > 0) {
+    stage.classList.add('roles-stage--split');
+  }
 
   const availableRoles = roles.slice(0, 12);
   availableRoles.forEach((role, index) => {
