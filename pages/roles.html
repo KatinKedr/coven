@@ -18,20 +18,32 @@
 
   <main class="roles-screen" role="main">
     <header class="roles-header">
-      <p class="roles-header__eyebrow">Ритуал начинается</p>
-      <h1 class="roles-header__title">Выбор ролей</h1>
-      <p class="roles-header__subtitle">По очереди откройте карты и узнайте, какая сила достанется каждой сестре. Никому не рассказывайте свою тайну до начала игры.</p>
+      <div class="roles-header__meta">
+        <p class="roles-header__eyebrow">Ритуал начинается</p>
+        <h1 class="roles-header__title">Выбор ролей</h1>
+      </div>
+      <p class="roles-header__subtitle">По очереди подойдите к алтарю и вытяните карту своей силы. Сохраняйте молчание, пока не начнётся игра.</p>
+      <ul class="roles-header__rules" aria-label="Правила этапа">
+        <li>Сестры открывают карты одна за другой.</li>
+        <li>Не озвучивайте свою роль до сигнала ведущей.</li>
+        <li>Если нужно повторить правило — нажмите на карту ещё раз.</li>
+      </ul>
     </header>
 
-    <section class="roles-players" aria-live="polite" aria-label="Список участниц">
-      <!-- Наполняется скриптом -->
+    <section class="roles-stage">
+      <aside class="roles-players" aria-live="polite" aria-label="Список участниц">
+        <!-- Наполняется скриптом -->
+      </aside>
+
+      <section class="roles-field" aria-label="Поле с картами ролей">
+        <div class="roles-field__halo" aria-hidden="true"></div>
+        <div class="roles-cards" aria-label="Колода ролей">
+          <!-- Карты создаются скриптом -->
+        </div>
+      </section>
     </section>
 
     <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
-
-    <section class="roles-cards" aria-label="Колода ролей">
-      <!-- Карты создаются скриптом -->
-    </section>
 
     <div class="roles-actions">
       <button class="coven-button roles-continue" type="button" hidden data-next="../index.html#game-start">
