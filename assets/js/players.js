@@ -24,12 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const MIN_PLAYERS = 2;
+
+  const getFilledNames = () =>
+    inputs
+      .map((input) => input.value.trim())
+      .filter((name) => name.length > 0);
+
   const updateButtonState = () => {
     if (!continueBtn) {
       return;
     }
-    const hasEmpty = inputs.some((input) => input.value.trim().length === 0);
-    continueBtn.disabled = hasEmpty;
+    const filledCount = getFilledNames().length;
+    continueBtn.disabled = filledCount < MIN_PLAYERS;
   };
 
   inputs.forEach((input) => {
@@ -46,14 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const names = inputs.map((input) => input.value.trim());
-    const firstEmptyIndex = names.findIndex((name) => name.length === 0);
+    const names = getFilledNames();
 
-    if (firstEmptyIndex !== -1) {
+    if (names.length < MIN_PLAYERS) {
       if (errorEl) {
-        errorEl.textContent = 'Пожалуйста, заполните все имена.';
+        errorEl.textContent = 'Добавьте как минимум два имени, чтобы продолжить.';
       }
-      inputs[firstEmptyIndex].focus();
+      const firstEmptyInput = inputs.find((input) => input.value.trim().length === 0);
+      (firstEmptyInput ?? inputs[0]).focus();
       return;
     }
 
