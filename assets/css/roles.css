@@ -7,6 +7,9 @@
 
 html,
 body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -21,6 +24,9 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: clamp(1.8rem, 5vh, 4rem);
+  min-height: 100vh;
+  overflow-y: auto;
   padding: clamp(2rem, 5vh, 4rem);
 }
 
@@ -427,6 +433,7 @@ body {
   }
   100% {
     transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 
@@ -535,5 +542,16 @@ body {
   .role-popup__close {
     top: -0.5rem;
     right: -0.5rem;
+  }
+}
+
+@media (max-height: 860px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .roles-screen {
+    margin-top: clamp(1.2rem, 6vh, 2.8rem);
+    margin-bottom: clamp(1.2rem, 6vh, 2.8rem);
   }
 }
