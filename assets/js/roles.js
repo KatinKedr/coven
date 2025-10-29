@@ -106,8 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'Тайная наблюдательница', hint: 'Ты видишь скрытые связи между участниками.' },
   ]);
 
-  const playerElements = storedNames.map((name) => {
+  const totalPlayers = storedNames.length;
+  playersContainer.dataset.count = String(totalPlayers);
+
+  const playerElements = storedNames.map((name, index) => {
     const element = createPlayerElement(name);
+
+    if (totalPlayers > 2) {
+      const angleStep = 360 / totalPlayers;
+      const baseAngle = -90;
+      const angle = baseAngle + angleStep * index;
+      element.style.setProperty('--player-angle', `${angle}deg`);
+      element.style.setProperty('--player-angle-inverse', `${-angle}deg`);
+    }
+
     playersContainer.append(element);
     return element;
   });

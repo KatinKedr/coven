@@ -18,32 +18,25 @@
 
   <main class="roles-screen" role="main">
     <header class="roles-header">
-      <div class="roles-header__meta">
-        <p class="roles-header__eyebrow">Ритуал начинается</p>
-        <h1 class="roles-header__title">Выбор ролей</h1>
-      </div>
-      <p class="roles-header__subtitle">По очереди подойдите к алтарю и вытяните карту своей силы. Сохраняйте молчание, пока не начнётся игра.</p>
-      <ul class="roles-header__rules" aria-label="Правила этапа">
-        <li>Сестры открывают карты одна за другой.</li>
-        <li>Не озвучивайте свою роль до сигнала ведущей.</li>
-        <li>Если нужно повторить правило — нажмите на карту ещё раз.</li>
-      </ul>
+      <p class="roles-header__eyebrow">Ритуал начинается</p>
+      <h1 class="roles-header__title">Алтарь ролей</h1>
+      <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
     </header>
 
-    <section class="roles-stage">
-      <aside class="roles-players" aria-live="polite" aria-label="Список участниц">
-        <!-- Наполняется скриптом -->
-      </aside>
-
-      <section class="roles-field" aria-label="Поле с картами ролей">
-        <div class="roles-field__halo" aria-hidden="true"></div>
-        <div class="roles-cards" aria-label="Колода ролей">
-          <!-- Карты создаются скриптом -->
+    <section class="roles-arena" aria-label="Сцена выбора роли">
+      <div class="roles-orbit">
+        <div class="roles-field" aria-label="Поле с картами ролей">
+          <div class="roles-field__halo" aria-hidden="true"></div>
+          <div class="roles-cards" aria-label="Колода ролей">
+            <!-- Карты создаются скриптом -->
+          </div>
         </div>
-      </section>
-    </section>
 
-    <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
+        <div class="roles-players" aria-live="polite" aria-label="Сёстры ритуала">
+          <!-- Наполняется скриптом -->
+        </div>
+      </div>
+    </section>
 
     <div class="roles-actions">
       <button class="coven-button roles-continue" type="button" hidden data-next="../index.html#game-start">
