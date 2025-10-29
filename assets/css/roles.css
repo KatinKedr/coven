@@ -25,7 +25,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  padding: clamp(1rem, 2.6vw, 1.8rem);
+  padding: clamp(0.8rem, 2.4vw, 1.6rem);
   font-family: 'Cinzel Decorative', serif;
   color: var(--coven-fog);
   background: url('../../image/background.jpg') center/cover no-repeat fixed;
@@ -113,13 +113,13 @@ body::before {
   position: relative;
   z-index: 5;
   width: 100%;
-  max-width: min(1180px, 100%);
+  max-width: min(1160px, 100%);
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.4rem, 5vh, 2.8rem);
-  padding-block: clamp(2.4rem, 7vh, 4.4rem) clamp(1.2rem, 4vh, 2.2rem);
+  gap: clamp(1.1rem, 4.2vh, 2.2rem);
+  padding-block: clamp(1.4rem, 6vh, 3.2rem) clamp(0.9rem, 3.6vh, 1.8rem);
 }
 
 .roles-header {
@@ -139,7 +139,7 @@ body::before {
 }
 
 .roles-header__title {
-  font-size: clamp(2.3rem, 4.4vw, 3.3rem);
+  font-size: clamp(2.1rem, 4vw, 3rem);
   letter-spacing: 0.22em;
   color: var(--coven-crimson);
   text-transform: uppercase;
@@ -147,7 +147,7 @@ body::before {
 }
 
 .roles-instruction {
-  margin-top: clamp(0.4rem, 1.2vw, 0.8rem);
+  margin-top: clamp(0.3rem, 1vw, 0.6rem);
   padding-inline: clamp(1.2rem, 3vw, 1.8rem);
   font-size: clamp(1.1rem, 2.6vw, 1.5rem);
   letter-spacing: 0.28em;
@@ -160,30 +160,30 @@ body::before {
 
 .roles-stage {
   position: relative;
-  width: min(1240px, 100%);
+  width: min(1180px, 100%);
   flex: 1;
   display: grid;
-  grid-template-columns: minmax(220px, 0.95fr) minmax(340px, 1fr) minmax(220px, 0.95fr);
+  grid-template-columns: minmax(200px, 0.88fr) minmax(360px, 1.1fr) minmax(200px, 0.88fr);
   align-items: center;
   justify-items: center;
   justify-content: space-between;
-  gap: clamp(2rem, 5.5vw, 3.6rem);
-  padding-inline: clamp(1rem, 3.4vw, 2.8rem);
+  gap: clamp(1.8rem, 5vw, 3.2rem);
+  padding-inline: clamp(0.6rem, 3vw, 2.4rem);
 }
 
 .roles-stage:not(.roles-stage--split) {
-  grid-template-columns: minmax(260px, 1fr) minmax(360px, 1.2fr);
+  grid-template-columns: minmax(250px, 1fr) minmax(360px, 1.2fr);
 }
 
 .roles-cards {
   position: relative;
-  width: min(50vw, 520px);
-  max-width: 520px;
-  height: min(60vmin, 480px);
+  width: min(46vw, 500px);
+  max-width: 500px;
+  height: min(56vmin, 440px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(-0.6rem, -1.5vh, -0.2rem);
+  margin-top: clamp(-1rem, -2.6vh, -0.3rem);
 }
 
 .roles-cards::before,
@@ -277,7 +277,7 @@ body::before {
   justify-content: center;
   gap: clamp(1rem, 2.6vw, 1.6rem);
   width: 100%;
-  max-width: 240px;
+  max-width: 210px;
   pointer-events: auto;
 }
 
@@ -298,17 +298,17 @@ body::before {
 }
 
 .roles-stage--split .roles-players--left {
-  transform: translateX(-8%);
+  transform: translateX(-14%);
 }
 
 .roles-stage--split .roles-players--right {
-  transform: translateX(8%);
+  transform: translateX(14%);
 }
 
 .roles-player {
   position: relative;
   width: 100%;
-  padding: clamp(0.9rem, 2vw, 1.2rem) clamp(0.8rem, 2vw, 1.1rem) clamp(1.1rem, 2.6vw, 1.4rem);
+  padding: clamp(0.75rem, 1.8vw, 1.05rem) clamp(0.7rem, 1.8vw, 1rem) clamp(0.9rem, 2.2vw, 1.2rem);
   border-radius: 20px;
   border: 1px solid rgba(219, 249, 244, 0.22);
   background: linear-gradient(170deg, rgba(10, 40, 52, 0.7), rgba(4, 5, 15, 0.82));
@@ -415,7 +415,7 @@ body::before {
 .roles-actions {
   display: flex;
   justify-content: center;
-  margin-top: clamp(0.4rem, 1.4vh, 1rem);
+  margin-top: clamp(0.2rem, 1vh, 0.8rem);
 }
 
 .roles-continue {
@@ -513,37 +513,33 @@ body::before {
 
 @media (max-width: 1080px) {
   .roles-stage {
-    width: min(1040px, 100%);
-    grid-template-columns: minmax(200px, 0.9fr) minmax(320px, 1fr) minmax(180px, 0.85fr);
-    gap: clamp(1.6rem, 4.8vw, 3rem);
-    padding-inline: clamp(0.8rem, 3vw, 2rem);
+    width: min(1020px, 100%);
+    grid-template-columns: minmax(180px, 0.88fr) minmax(320px, 1.06fr) minmax(170px, 0.82fr);
+    gap: clamp(1.4rem, 4.4vw, 2.6rem);
+    padding-inline: clamp(0.6rem, 2.8vw, 1.8rem);
   }
 
   .roles-cards {
-    width: min(54vw, 460px);
-    height: min(62vmin, 440px);
+    width: min(52vw, 440px);
+    height: min(58vmin, 420px);
   }
 }
 
 @media (max-width: 900px) {
-  body {
-    padding: clamp(1.2rem, 3vw, 2rem);
-  }
-
   .roles-layout {
-    gap: clamp(1.4rem, 4.2vh, 2.4rem);
-    padding-block: clamp(2.2rem, 7vh, 3.6rem) clamp(1.2rem, 4.6vh, 2.2rem);
+    gap: clamp(1rem, 3.6vh, 2rem);
+    padding-block: clamp(1.6rem, 6vh, 3rem) clamp(0.8rem, 3.8vh, 1.6rem);
   }
 
   .roles-stage {
     width: min(780px, 100%);
-    grid-template-columns: minmax(170px, 0.9fr) minmax(280px, 1fr) minmax(150px, 0.65fr);
-    gap: clamp(1.4rem, 4.2vw, 2.4rem);
-    padding-inline: clamp(0.6rem, 2.6vw, 1.6rem);
+    grid-template-columns: minmax(160px, 0.9fr) minmax(280px, 1fr) minmax(140px, 0.62fr);
+    gap: clamp(1.2rem, 3.8vw, 2.2rem);
+    padding-inline: clamp(0.6rem, 2.4vw, 1.4rem);
   }
 
   .roles-players {
-    max-width: 210px;
+    max-width: 190px;
   }
 }
 
