@@ -24,6 +24,7 @@ const createPlayerElement = (name) => {
   role.textContent = 'Роль ещё не открыта';
 
   player.append(avatar, title, role);
+  player.append(title, role);
   return player;
 };
 
