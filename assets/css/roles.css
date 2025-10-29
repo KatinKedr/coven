@@ -10,6 +10,9 @@ body {
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   font-family: 'Cinzel Decorative', serif;
   color: #DBF9F4;
 }
@@ -24,6 +27,7 @@ body {
   padding: clamp(1.8rem, 5vh, 4rem);
   min-height: 100vh;
   overflow-y: auto;
+  padding: clamp(2rem, 5vh, 4rem);
 }
 
 .fog-overlay,
