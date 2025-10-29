@@ -391,6 +391,7 @@ body {
   padding: 0;
   border-radius: 18px;
   overflow: hidden;
+  transition: transform 0.45s ease, filter 0.45s ease, opacity 0.45s ease, box-shadow 0.45s ease;
   isolation: isolate;
   transform-style: preserve-3d;
   transition: transform 0.45s ease, filter 0.45s ease, opacity 0.45s ease, box-shadow 0.45s ease;
@@ -407,6 +408,18 @@ body {
 }
 
 .role-card::before {
+  background: radial-gradient(circle at 50% 40%, rgba(219, 249, 244, 0.22), rgba(219, 249, 244, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.4s ease;
+  transform: scale(0.95);
+  filter: blur(0);
+}
+
+.role-card::after {
+  background: radial-gradient(circle at 50% 25%, rgba(251, 31, 23, 0.38), rgba(251, 31, 23, 0) 65%);
+  opacity: 0;
+  transform: scale(0.92);
+  filter: blur(20px);
   background: rgba(219, 249, 244, 0.12);
   background: rgba(219, 249, 244, 0.08);
   mix-blend-mode: screen;
@@ -432,6 +445,8 @@ body {
   height: auto;
   object-fit: cover;
   border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+  transition: transform 0.45s ease, filter 0.45s ease;
   box-shadow:
     0 12px 35px rgba(0, 0, 0, 0.55),
     inset 0 0 55px rgba(251, 31, 23, 0.32);
@@ -457,10 +472,15 @@ body {
 .role-card:hover::before,
 .role-card:focus-visible::before {
   opacity: 1;
+  transform: scale(1);
+  filter: blur(6px);
 }
 
 .role-card:hover::after,
 .role-card:focus-visible::after {
+  opacity: 0.85;
+  transform: scale(1.05);
+  filter: blur(26px);
   opacity: 0.95;
   transform: scale(1.07);
   opacity: 0.9;
@@ -484,6 +504,9 @@ body {
 
 .role-card.is-revealed::after,
 .role-card.is-revealed::before {
+  opacity: 0.3;
+  filter: blur(14px);
+  transform: scale(1);
   opacity: 0.35;
   filter: blur(12px);
 }
