@@ -11,6 +11,10 @@ const createPlayerElement = (name) => {
   const player = document.createElement('article');
   player.className = 'roles-player';
 
+  const avatar = document.createElement('div');
+  avatar.className = 'roles-player__orb';
+  avatar.setAttribute('aria-hidden', 'true');
+
   const title = document.createElement('p');
   title.className = 'roles-player__name';
   title.textContent = name;
@@ -19,6 +23,7 @@ const createPlayerElement = (name) => {
   role.className = 'roles-player__role';
   role.textContent = 'Роль ещё не открыта';
 
+  player.append(avatar, title, role);
   player.append(title, role);
   return player;
 };
