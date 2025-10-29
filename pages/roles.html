@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coven ✦ Игра — Роли</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/roles.css" />
+  <link rel="stylesheet" href="../assets/css/cursor.css" />
+</head>
+<body>
+  <a href="players.html" class="back-link">← Назад</a>
+  <div class="fog-drift" aria-hidden="true"></div>
+  <div class="fog-overlay" aria-hidden="true"></div>
+
+  <main class="roles-screen" role="main">
+    <header class="roles-header">
+      <p class="roles-header__eyebrow">Ритуал начинается</p>
+      <h1 class="roles-header__title">Выбор ролей</h1>
+      <p class="roles-header__subtitle">По очереди откройте карты и узнайте, какая сила достанется каждой сестре. Никому не рассказывайте свою тайну до начала игры.</p>
+    </header>
+
+    <section class="roles-players" aria-live="polite" aria-label="Список участниц">
+      <!-- Наполняется скриптом -->
+    </section>
+
+    <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
+
+    <section class="roles-cards" aria-label="Колода ролей">
+      <!-- Карты создаются скриптом -->
+    </section>
+
+    <div class="roles-actions">
+      <button class="coven-button roles-continue" type="button" hidden data-next="../index.html#game-start">
+        Продолжить
+      </button>
+    </div>
+  </main>
+
+  <div class="role-popup" role="dialog" aria-modal="true" hidden>
+    <div class="role-popup__backdrop" data-close-popup aria-hidden="true"></div>
+    <div class="role-popup__body">
+      <button class="role-popup__close" type="button" aria-label="Закрыть" data-close-popup>×</button>
+      <div class="role-popup__frame">
+        <img class="role-popup__image" src="../image/inside.png" alt="Мистическая карта" loading="lazy" />
+        <div class="role-popup__content">
+          <h2 class="role-popup__title">Роль</h2>
+          <p class="role-popup__name"></p>
+          <p class="role-popup__hint"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/cursor.js" defer></script>
+  <script src="../assets/js/roles.js" defer></script>
+</body>
+</html>
