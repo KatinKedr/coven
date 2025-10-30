@@ -523,9 +523,9 @@ body::before {
 .roles-actions {
   display: flex;
   justify-content: center;
-  margin-top: clamp(-3.2rem, -6.2vh, -1.2rem);
-  margin-bottom: 0;
-  padding-bottom: clamp(0.1rem, 1vh, 0.6rem);
+  margin-top: clamp(-5.2rem, -9vh, -1.6rem);
+  margin-bottom: clamp(0.4rem, 1.6vh, 0.9rem);
+  padding-bottom: clamp(0.1rem, 0.8vh, 0.4rem);
 }
 
 .roles-continue {
@@ -666,7 +666,7 @@ body::before {
   }
 
   .roles-actions {
-    margin-top: clamp(-3rem, -6vh, -1.4rem);
+    margin-top: clamp(-4.2rem, -7.5vh, -1.6rem);
   }
 }
 
@@ -719,8 +719,8 @@ body::before {
   }
 
   .roles-actions {
-    margin-top: clamp(-1.8rem, -4.2vh, -0.8rem);
-    margin-bottom: clamp(0.8rem, 2.6vh, 1.4rem);
+    margin-top: clamp(-3rem, -5.5vh, -1.2rem);
+    margin-bottom: clamp(1rem, 3vh, 1.6rem);
   }
 }
 
