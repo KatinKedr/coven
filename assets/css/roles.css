@@ -595,27 +595,21 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(1.4rem, 3.6vw, 2.4rem) clamp(1.8rem, 4.2vw, 3rem);
+  padding: clamp(1.8rem, 4vw, 2.6rem) clamp(2.6rem, 6vw, 4.2rem);
   text-align: center;
-  gap: clamp(0.7rem, 2.2vw, 1.1rem);
-}
-
-.role-popup__title {
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--coven-crimson);
-  text-shadow: 0 0 26px rgba(251, 31, 23, 0.55);
+  gap: clamp(0.9rem, 2.6vw, 1.4rem);
 }
 
 .role-popup__name {
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-  letter-spacing: 0.12em;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: rgba(249, 212, 155, 0.94);
+  text-shadow: 0 0 26px rgba(249, 212, 155, 0.45);
 }
 
 .role-popup__divider {
-  width: min(100%, 220px);
+  width: min(100%, 190px);
   height: 1px;
   background: linear-gradient(
     90deg,
@@ -623,43 +617,45 @@ body::before {
     rgba(249, 212, 155, 0.85),
     rgba(249, 212, 155, 0)
   );
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .role-popup__details {
-  width: min(100%, 36rem);
+  width: 100%;
+  max-width: clamp(18rem, 70%, 22rem);
   display: grid;
-  gap: clamp(0.6rem, 2vw, 1rem);
-  text-align: left;
-  color: rgba(219, 249, 244, 0.85);
-  line-height: 1.55;
-  overflow: auto;
-  max-height: min(52vh, 340px);
+  gap: clamp(0.6rem, 2.2vw, 1.1rem);
+  text-align: center;
+  color: rgba(219, 249, 244, 0.88);
+  line-height: 1.45;
+  overflow-y: auto;
+  max-height: min(50vh, 320px);
   padding-right: clamp(0.1rem, 0.4vw, 0.3rem);
+  margin: 0 auto;
 }
 
 .role-popup__detail {
   display: grid;
-  gap: clamp(0.2rem, 0.8vw, 0.45rem);
-  padding: clamp(0.3rem, 1vw, 0.6rem) clamp(0.4rem, 1.4vw, 0.8rem);
-  border-radius: 14px;
-  background: rgba(6, 27, 35, 0.26);
-  box-shadow: inset 0 0 0 1px rgba(249, 212, 155, 0.08);
-  backdrop-filter: blur(2px);
+  gap: clamp(0.25rem, 0.9vw, 0.6rem);
+  justify-items: center;
 }
 
 .role-popup__detail-title {
-  font-size: clamp(0.82rem, 1.4vw, 0.98rem);
-  letter-spacing: 0.24em;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(249, 212, 155, 0.92);
+  margin: 0;
 }
 
 .role-popup__detail-text {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  letter-spacing: 0.02em;
+  font-size: clamp(0.88rem, 1.7vw, 1.05rem);
+  letter-spacing: 0.01em;
   color: rgba(219, 249, 244, 0.88);
+  word-break: break-word;
+  margin: 0;
 }
 
 .role-popup__detail.is-empty {
