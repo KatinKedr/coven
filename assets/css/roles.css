@@ -593,7 +593,7 @@ body::before {
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   min-height: 0;
   padding: clamp(3.6rem, 9vw, 5.6rem) clamp(2.1rem, 5vw, 3.4rem)
@@ -608,6 +608,7 @@ body::before {
   text-transform: uppercase;
   color: rgba(249, 212, 155, 0.94);
   text-shadow: 0 0 26px rgba(249, 212, 155, 0.45);
+  align-self: center;
 }
 
 .role-popup__divider {
@@ -620,6 +621,7 @@ body::before {
     rgba(249, 212, 155, 0)
   );
   opacity: 0.75;
+  align-self: center;
 }
 
 .role-popup__details {
@@ -629,19 +631,21 @@ body::before {
   flex: 1;
   gap: clamp(0.38rem, 1.6vw, 0.78rem);
   align-content: start;
-  text-align: center;
+  justify-items: stretch;
+  text-align: left;
   color: rgba(219, 249, 244, 0.88);
   line-height: 1.38;
   overflow-y: auto;
   max-height: min(64vh, 402px);
-  padding-right: clamp(0.05rem, 0.3vw, 0.2rem);
+  padding: 0 clamp(0.45rem, 1.6vw, 1rem) 0 clamp(0.45rem, 1.6vw, 1rem);
   margin: clamp(0.2rem, 1vw, 0.7rem) auto 0;
 }
 
 .role-popup__detail {
   display: grid;
   gap: clamp(0.18rem, 0.6vw, 0.4rem);
-  justify-items: center;
+  justify-items: stretch;
+  text-align: left;
 }
 
 .role-popup__detail-title {
@@ -651,6 +655,7 @@ body::before {
   text-transform: uppercase;
   color: rgba(249, 212, 155, 0.92);
   margin: 0;
+  text-align: center;
 }
 
 .role-popup__detail-text {
@@ -660,6 +665,7 @@ body::before {
   color: rgba(219, 249, 244, 0.88);
   word-break: break-word;
   margin: 0;
+  hyphens: auto;
 }
 
 .role-popup__detail.is-empty {
