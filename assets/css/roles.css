@@ -166,11 +166,11 @@ body::before {
   flex: 1;
   display: grid;
   grid-template-columns: minmax(190px, 0.74fr) minmax(520px, 1.26fr) minmax(190px, 0.74fr);
-  align-items: flex-start;
+  align-items: center;
   justify-items: center;
   gap: clamp(0.9rem, 2.6vw, 2.2rem);
-  padding: clamp(0.6rem, 2vh, 1.4rem) clamp(0.1rem, 0.6vw, 0.4rem) 0;
-  margin-top: clamp(-1rem, -3.2vh, -0.4rem);
+  padding-inline: clamp(0.1rem, 0.6vw, 0.4rem);
+  margin-top: clamp(-1.2rem, -3.6vh, -0.6rem);
 }
 
 .roles-cards {
@@ -181,7 +181,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(-0.8rem, -2.6vh, -0.4rem);
+  margin-top: clamp(-1.6rem, -4.6vh, -0.8rem);
 }
 
 .roles-cards::before,
@@ -301,7 +301,7 @@ body::before {
   gap: clamp(0.8rem, 2.2vw, 1.4rem);
   width: 100%;
   max-width: clamp(150px, 16vw, 190px);
-  margin-top: clamp(-2.4rem, -6vh, -1.2rem);
+  margin-top: clamp(-1.2rem, -3.2vh, -0.5rem);
   pointer-events: auto;
 }
 
@@ -517,9 +517,9 @@ body::before {
 .roles-actions {
   display: flex;
   justify-content: center;
-  margin-top: clamp(-1.8rem, -4.6vh, -0.8rem);
-  margin-bottom: clamp(0.6rem, 2.4vh, 1.2rem);
-  padding-bottom: clamp(0.4rem, 1.6vh, 1rem);
+  margin-top: clamp(-2.6rem, -5.4vh, -1.1rem);
+  margin-bottom: clamp(0.8rem, 2.8vh, 1.8rem);
+  padding-bottom: clamp(0.6rem, 2vh, 1.2rem);
 }
 
 .roles-continue {
@@ -620,9 +620,8 @@ body::before {
     max-width: min(1320px, 100%);
     grid-template-columns: minmax(180px, 0.78fr) minmax(440px, 1.2fr) minmax(180px, 0.78fr);
     gap: clamp(0.9rem, 3vw, 2rem);
-    align-items: flex-start;
-    padding: clamp(0.5rem, 2vh, 1.2rem) clamp(0.2rem, 1.2vw, 0.6rem) 0;
-    margin-top: clamp(-0.8rem, -2.6vh, -0.3rem);
+    padding-inline: clamp(0.2rem, 1.2vw, 0.6rem);
+    margin-top: clamp(-1rem, -3vh, -0.5rem);
   }
 
   .roles-cards {
@@ -636,14 +635,12 @@ body::before {
     max-width: min(980px, 100%);
     grid-template-columns: minmax(160px, 0.8fr) minmax(320px, 1.1fr) minmax(140px, 0.7fr);
     gap: clamp(0.8rem, 2.6vw, 1.6rem);
-    align-items: flex-start;
-    padding: clamp(0.4rem, 1.8vh, 1rem) clamp(0.2rem, 1vw, 0.5rem) 0;
-    margin-top: clamp(-0.6rem, -2vh, -0.3rem);
+    padding-inline: clamp(0.2rem, 1vw, 0.5rem);
+    margin-top: clamp(-0.8rem, -2.6vh, -0.4rem);
   }
 
   .roles-players {
     max-width: 160px;
-    margin-top: clamp(-2rem, -5.5vh, -1rem);
   }
 
   .roles-cards {
