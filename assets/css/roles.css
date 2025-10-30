@@ -595,14 +595,16 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(1.8rem, 4vw, 2.6rem) clamp(2.6rem, 6vw, 4.2rem);
+  min-height: 0;
+  padding: clamp(3.2rem, 8vw, 4.8rem) clamp(2.2rem, 5.4vw, 3.6rem)
+    clamp(2.6rem, 6.6vw, 3.6rem);
   text-align: center;
-  gap: clamp(0.9rem, 2.6vw, 1.4rem);
+  gap: clamp(0.75rem, 2vw, 1.1rem);
 }
 
 .role-popup__name {
-  font-size: clamp(1.45rem, 3vw, 1.9rem);
-  letter-spacing: 0.18em;
+  font-size: clamp(1.35rem, 2.8vw, 1.78rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(249, 212, 155, 0.94);
   text-shadow: 0 0 26px rgba(249, 212, 155, 0.45);
@@ -622,28 +624,30 @@ body::before {
 
 .role-popup__details {
   width: 100%;
-  max-width: clamp(18rem, 70%, 22rem);
+  max-width: clamp(18rem, 74%, 23.5rem);
   display: grid;
-  gap: clamp(0.6rem, 2.2vw, 1.1rem);
+  flex: 1;
+  gap: clamp(0.45rem, 1.8vw, 0.9rem);
+  align-content: start;
   text-align: center;
   color: rgba(219, 249, 244, 0.88);
-  line-height: 1.45;
+  line-height: 1.42;
   overflow-y: auto;
-  max-height: min(50vh, 320px);
-  padding-right: clamp(0.1rem, 0.4vw, 0.3rem);
-  margin: 0 auto;
+  max-height: min(58vh, 360px);
+  padding-right: clamp(0.1rem, 0.35vw, 0.25rem);
+  margin: clamp(0.1rem, 0.8vw, 0.6rem) auto 0;
 }
 
 .role-popup__detail {
   display: grid;
-  gap: clamp(0.25rem, 0.9vw, 0.6rem);
+  gap: clamp(0.2rem, 0.7vw, 0.45rem);
   justify-items: center;
 }
 
 .role-popup__detail-title {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  letter-spacing: 0.28em;
+  font-size: clamp(0.78rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(249, 212, 155, 0.92);
   margin: 0;
@@ -651,7 +655,7 @@ body::before {
 
 .role-popup__detail-text {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.88rem, 1.7vw, 1.05rem);
+  font-size: clamp(0.78rem, 1.5vw, 0.96rem);
   letter-spacing: 0.01em;
   color: rgba(219, 249, 244, 0.88);
   word-break: break-word;
@@ -806,5 +810,16 @@ body::before {
 
   .role-popup__body {
     border-radius: 20px;
+  }
+}
+
+@media (max-height: 760px) {
+  .role-popup__content {
+    padding: clamp(2.6rem, 7vw, 3.6rem) clamp(2rem, 5vw, 3.2rem)
+      clamp(2.2rem, 6vw, 3.2rem);
+  }
+
+  .role-popup__details {
+    max-height: min(64vh, 320px);
   }
 }
