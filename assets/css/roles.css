@@ -594,31 +594,76 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: clamp(1.6rem, 4vw, 2.6rem);
+  justify-content: flex-start;
+  min-height: 0;
+  padding: clamp(3.6rem, 9vw, 5.6rem) clamp(2.1rem, 5vw, 3.4rem)
+    clamp(2rem, 5.2vw, 2.8rem);
   text-align: center;
-  gap: 1rem;
-}
-
-.role-popup__title {
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--coven-crimson);
-  text-shadow: 0 0 26px rgba(251, 31, 23, 0.55);
+  gap: clamp(0.68rem, 1.8vw, 1rem);
 }
 
 .role-popup__name {
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-  letter-spacing: 0.12em;
+  font-size: clamp(1.35rem, 2.8vw, 1.78rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: rgba(249, 212, 155, 0.94);
+  text-shadow: 0 0 26px rgba(249, 212, 155, 0.45);
 }
 
-.role-popup__hint {
-  max-width: 45ch;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  line-height: 1.6;
-  color: rgba(219, 249, 244, 0.8);
+.role-popup__divider {
+  width: min(100%, 190px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 212, 155, 0),
+    rgba(249, 212, 155, 0.85),
+    rgba(249, 212, 155, 0)
+  );
+  opacity: 0.75;
+}
+
+.role-popup__details {
+  width: 100%;
+  max-width: clamp(18rem, 78%, 24.8rem);
+  display: grid;
+  flex: 1;
+  gap: clamp(0.38rem, 1.6vw, 0.78rem);
+  align-content: start;
+  text-align: center;
+  color: rgba(219, 249, 244, 0.88);
+  line-height: 1.38;
+  overflow-y: auto;
+  max-height: min(64vh, 402px);
+  padding-right: clamp(0.05rem, 0.3vw, 0.2rem);
+  margin: clamp(0.2rem, 1vw, 0.7rem) auto 0;
+}
+
+.role-popup__detail {
+  display: grid;
+  gap: clamp(0.18rem, 0.6vw, 0.4rem);
+  justify-items: center;
+}
+
+.role-popup__detail-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.74rem, 1.32vw, 0.9rem);
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  color: rgba(249, 212, 155, 0.92);
+  margin: 0;
+}
+
+.role-popup__detail-text {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.74rem, 1.42vw, 0.92rem);
+  letter-spacing: 0.01em;
+  color: rgba(219, 249, 244, 0.88);
+  word-break: break-word;
+  margin: 0;
+}
+
+.role-popup__detail.is-empty {
+  display: none;
 }
 
 @media (max-width: 1080px) {
@@ -765,5 +810,16 @@ body::before {
 
   .role-popup__body {
     border-radius: 20px;
+  }
+}
+
+@media (max-height: 760px) {
+  .role-popup__content {
+    padding: clamp(3rem, 8vw, 3.9rem) clamp(1.9rem, 4.8vw, 3rem)
+      clamp(1.8rem, 4.8vw, 2.6rem);
+  }
+
+  .role-popup__details {
+    max-height: min(68vh, 340px);
   }
 }

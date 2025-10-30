@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/roles.css" />
   <link rel="stylesheet" href="../assets/css/cursor.css" />
@@ -47,9 +48,26 @@
       <div class="role-popup__frame">
         <img class="role-popup__image" src="../image/inside.png" alt="Мистическая карта" loading="lazy" />
         <div class="role-popup__content">
-          <h2 class="role-popup__title">Роль</h2>
           <p class="role-popup__name"></p>
-          <p class="role-popup__hint"></p>
+          <div class="role-popup__divider" aria-hidden="true"></div>
+          <dl class="role-popup__details">
+            <div class="role-popup__detail" data-role-detail="who">
+              <dt class="role-popup__detail-title">Кто ты</dt>
+              <dd class="role-popup__detail-text" data-role-field="who"></dd>
+            </div>
+            <div class="role-popup__detail" data-role-detail="howToPlay">
+              <dt class="role-popup__detail-title">Как играть</dt>
+              <dd class="role-popup__detail-text" data-role-field="howToPlay"></dd>
+            </div>
+            <div class="role-popup__detail" data-role-detail="challenge">
+              <dt class="role-popup__detail-title">Испытание</dt>
+              <dd class="role-popup__detail-text" data-role-field="challenge"></dd>
+            </div>
+            <div class="role-popup__detail" data-role-detail="superpower">
+              <dt class="role-popup__detail-title">Суперсила</dt>
+              <dd class="role-popup__detail-text" data-role-field="superpower"></dd>
+            </div>
+          </dl>
         </div>
       </div>
     </div>
