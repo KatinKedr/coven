@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coven ✦ Игра — Участницы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/players.css" />
+  <link rel="stylesheet" href="../assets/css/cursor.css" />
+</head>
+<body>
+  <a href="rules.html" class="back-link">← НАЗАД</a>
+  <div class="fog-drift" aria-hidden="true"></div>
+  <div class="fog-overlay" aria-hidden="true"></div>
+
+  <main class="players-screen" role="main">
+    <header class="players-intro">
+      <p class="players-intro__eyebrow">Подготовка к ритуалу</p>
+      <h1 class="players-intro__title">Выбери своих сестёр</h1>
+      <p class="players-intro__subtitle">
+        Запиши имена участниц (от двух до шести), которые соберутся сегодня вечером в ковене. Мы
+        сохраним их, чтобы каждая роль и испытание нашли свою хозяйку.
+      </p>
+    </header>
+
+    <form class="players-form" novalidate>
+      <div class="players-grid">
+        <label class="player-field">
+          <span>Участница 1</span>
+          <input type="text" name="player-1" placeholder="Имя" autocomplete="off" autofocus>
+        </label>
+        <label class="player-field">
+          <span>Участница 2</span>
+          <input type="text" name="player-2" placeholder="Имя" autocomplete="off">
+        </label>
+        <label class="player-field">
+          <span>Участница 3</span>
+          <input type="text" name="player-3" placeholder="Имя" autocomplete="off">
+        </label>
+        <label class="player-field">
+          <span>Участница 4</span>
+          <input type="text" name="player-4" placeholder="Имя" autocomplete="off">
+        </label>
+        <label class="player-field">
+          <span>Участница 5</span>
+          <input type="text" name="player-5" placeholder="Имя" autocomplete="off">
+        </label>
+        <label class="player-field">
+          <span>Участница 6</span>
+          <input type="text" name="player-6" placeholder="Имя" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="players-actions">
+        <p class="players-error" role="status" aria-live="polite"></p>
+        <button id="continueBtn" class="coven-button" type="submit" data-next="roles.html">
+          Продолжить
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../assets/js/cursor.js" defer></script>
+  <script src="../assets/js/players.js" defer></script>
+</body>
+</html>

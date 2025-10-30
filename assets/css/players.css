@@ -1,0 +1,295 @@
+/* Coven palette: #620A07, #FB1F17, #0C3C4A, #3E8989, #DBF9F4 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Cinzel Decorative', serif;
+  color: #DBF9F4;
+}
+
+body {
+  background: url('../../image/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: clamp(2rem, 5vh, 4rem);
+}
+
+.fog-overlay,
+.fog-drift {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fog-overlay {
+  background: radial-gradient(circle at center, rgba(8, 45, 65, 0.9), rgba(0, 0, 15, 0.95));
+  z-index: 25;
+  animation: fogReveal 4s ease-in-out forwards;
+  filter: blur(24px);
+}
+
+.fog-drift {
+  background: radial-gradient(circle at 40% 60%, rgba(12, 60, 74, 0.28), rgba(0, 0, 30, 0.4));
+  z-index: 10;
+  opacity: 0.55;
+  animation: fogDrift 26s ease-in-out infinite alternate;
+  filter: blur(18px);
+}
+
+@keyframes fogReveal {
+  0% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(28px);
+  }
+
+  40% {
+    opacity: 0.85;
+    transform: scale(1.04);
+    filter: blur(20px);
+  }
+
+  80% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fogDrift {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+
+  100% {
+    background-position: 50% 100%;
+    opacity: 0.45;
+    transform: scale(1);
+  }
+}
+
+.back-link {
+  position: absolute;
+  top: clamp(1.6rem, 4vw, 2.2rem);
+  left: clamp(1.8rem, 4.5vw, 2.6rem);
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  color: rgba(219, 249, 244, 0.88);
+  font-size: 0.95rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 60;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  opacity: 0.8;
+  transform: translateX(-6px);
+}
+
+.players-screen {
+  position: relative;
+  z-index: 50;
+  width: min(94vw, 1080px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vh, 3rem);
+  padding: clamp(2.4rem, 5vw, 4rem) clamp(2.2rem, 4.4vw, 3.4rem);
+  border-radius: 36px;
+  background:
+    linear-gradient(145deg, rgba(12, 60, 74, 0.58), rgba(0, 0, 0, 0.55));
+  box-shadow:
+    0 34px 86px rgba(0, 0, 0, 0.75),
+    inset 0 0 120px rgba(12, 60, 74, 0.24);
+  border: 1.5px solid rgba(62, 137, 137, 0.32);
+  backdrop-filter: blur(10px);
+}
+
+.players-screen::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 28px;
+  border: 1px solid rgba(219, 249, 244, 0.18);
+  background: radial-gradient(120% 120% at 50% 0%, rgba(251, 31, 23, 0.16), transparent 65%);
+  pointer-events: none;
+}
+
+.players-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.players-intro__eyebrow {
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.72);
+}
+
+.players-intro__title {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  letter-spacing: 0.22em;
+  color: #FB1F17;
+  text-shadow: 0 0 24px rgba(251, 31, 23, 0.65);
+}
+
+.players-intro__subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(219, 249, 244, 0.82);
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
+.players-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.4rem, 2.8vw, 2.2rem);
+}
+
+.player-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border-radius: 20px;
+  border: 1px solid rgba(251, 31, 23, 0.42);
+  background:
+    radial-gradient(140% 140% at 50% 0%, rgba(62, 137, 137, 0.35), rgba(12, 60, 74, 0.25) 48%, rgba(8, 15, 30, 0.7) 100%);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.55),
+    inset 0 0 36px rgba(62, 137, 137, 0.24);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.player-field:hover,
+.player-field:focus-within {
+  transform: translateY(-3px);
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 50px rgba(62, 137, 137, 0.34);
+  border-color: rgba(219, 249, 244, 0.6);
+}
+
+.player-field span {
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.75);
+}
+
+.player-field input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(219, 249, 244, 0.4);
+  background: rgba(8, 15, 30, 0.6);
+  color: #DBF9F4;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.06em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-field input::placeholder {
+  color: rgba(219, 249, 244, 0.5);
+}
+
+.player-field input:focus {
+  outline: none;
+  border-color: rgba(251, 31, 23, 0.65);
+  box-shadow: 0 0 0 3px rgba(251, 31, 23, 0.25);
+}
+
+.players-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.players-error {
+  min-height: 1.2rem;
+  font-size: 0.95rem;
+  color: #FB1F17;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.players-actions .coven-button {
+  width: min(100%, 320px);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    padding-block: 6vh;
+  }
+
+  .players-screen {
+    width: min(94vw, 640px);
+    padding: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .players-screen::before {
+    inset: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .players-intro__title {
+    letter-spacing: 0.18em;
+  }
+
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .players-actions {
+    align-items: stretch;
+  }
+
+  .players-actions .coven-button {
+    width: 100%;
+  }
+}
