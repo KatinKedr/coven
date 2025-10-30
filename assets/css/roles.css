@@ -117,8 +117,8 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.9rem, 3.2vh, 1.8rem);
-  padding: clamp(0.8rem, 4vh, 2rem) clamp(0.6rem, 2vw, 1.2rem) clamp(0.9rem, 3.4vh, 1.6rem);
+  gap: clamp(0.8rem, 2.8vh, 1.6rem);
+  padding: clamp(0.8rem, 3.6vh, 1.8rem) clamp(0.6rem, 2vw, 1.2rem) clamp(0.4rem, 2.2vh, 1.1rem);
 }
 
 .roles-header {
@@ -170,14 +170,14 @@ body::before {
   justify-items: center;
   gap: clamp(0.9rem, 2.6vw, 2.2rem);
   padding-inline: clamp(0.1rem, 0.6vw, 0.4rem);
-  margin-top: clamp(-1.2rem, -3.6vh, -0.6rem);
+  margin-top: clamp(-1.8rem, -4.8vh, -0.9rem);
 }
 
 .roles-cards {
   position: relative;
   width: min(72vw, 720px);
   max-width: 720px;
-  height: min(56vw, 460px);
+  height: min(52vw, 430px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -514,12 +514,18 @@ body::before {
   }
 }
 
+.roles-layout,
+.roles-stage,
+.roles-actions {
+  transition: margin 0.35s ease;
+}
+
 .roles-actions {
   display: flex;
   justify-content: center;
-  margin-top: clamp(-2.6rem, -5.4vh, -1.1rem);
-  margin-bottom: clamp(0.8rem, 2.8vh, 1.8rem);
-  padding-bottom: clamp(0.6rem, 2vh, 1.2rem);
+  margin-top: clamp(-5.2rem, -9vh, -1.6rem);
+  margin-bottom: clamp(0.4rem, 1.6vh, 0.9rem);
+  padding-bottom: clamp(0.1rem, 0.8vh, 0.4rem);
 }
 
 .roles-continue {
@@ -621,12 +627,12 @@ body::before {
     grid-template-columns: minmax(180px, 0.78fr) minmax(440px, 1.2fr) minmax(180px, 0.78fr);
     gap: clamp(0.9rem, 3vw, 2rem);
     padding-inline: clamp(0.2rem, 1.2vw, 0.6rem);
-    margin-top: clamp(-1rem, -3vh, -0.5rem);
+    margin-top: clamp(-1.6rem, -4vh, -0.8rem);
   }
 
   .roles-cards {
     width: min(76vw, 600px);
-    height: min(62vw, 420px);
+    height: min(58vw, 400px);
   }
 }
 
@@ -634,9 +640,9 @@ body::before {
   .roles-stage {
     max-width: min(980px, 100%);
     grid-template-columns: minmax(160px, 0.8fr) minmax(320px, 1.1fr) minmax(140px, 0.7fr);
-    gap: clamp(0.8rem, 2.6vw, 1.6rem);
+    gap: clamp(0.8rem, 2.2vw, 1.4rem);
     padding-inline: clamp(0.2rem, 1vw, 0.5rem);
-    margin-top: clamp(-0.8rem, -2.6vh, -0.4rem);
+    margin-top: clamp(-1.2rem, -3.2vh, -0.6rem);
   }
 
   .roles-players {
@@ -645,7 +651,22 @@ body::before {
 
   .roles-cards {
     width: min(82vw, 540px);
-    height: min(68vw, 400px);
+    height: min(64vw, 380px);
+  }
+}
+
+@media (max-height: 880px) {
+  .roles-layout {
+    gap: clamp(0.7rem, 2.2vh, 1.3rem);
+    padding: clamp(0.6rem, 3vh, 1.4rem) clamp(0.6rem, 2vw, 1.2rem) clamp(0.3rem, 1.6vh, 0.7rem);
+  }
+
+  .roles-stage {
+    margin-top: clamp(-2.1rem, -5.2vh, -1.1rem);
+  }
+
+  .roles-actions {
+    margin-top: clamp(-4.2rem, -7.5vh, -1.6rem);
   }
 }
 
@@ -663,7 +684,7 @@ body::before {
   .roles-cards {
     order: 2;
     width: min(80vw, 380px);
-    height: min(78vmin, 420px);
+    height: min(74vmin, 400px);
     margin-top: 0;
   }
 
@@ -698,8 +719,8 @@ body::before {
   }
 
   .roles-actions {
-    margin-top: clamp(-1.4rem, -3.4vh, -0.6rem);
-    margin-bottom: clamp(0.9rem, 3vh, 1.6rem);
+    margin-top: clamp(-3rem, -5.5vh, -1.2rem);
+    margin-bottom: clamp(1rem, 3vh, 1.6rem);
   }
 }
 
