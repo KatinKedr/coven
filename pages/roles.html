@@ -20,15 +20,22 @@
     <header class="roles-header">
       <p class="roles-header__eyebrow">Ритуал начинается</p>
       <h1 class="roles-header__title">Алтарь ролей</h1>
-      <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
     </header>
 
     <section class="roles-stage" aria-label="Сцена выбора роли">
       <div class="roles-players roles-players--left" aria-live="polite" aria-label="Сёстры ритуала слева"></div>
 
-      <div class="roles-cards" aria-label="Колода ролей">
-        <!-- Карты создаются скриптом -->
+      <div class="roles-altar" aria-label="Поле с картами ролей">
+        <div class="roles-field__halo" aria-hidden="true"></div>
+        <div class="roles-field">
+          <div class="roles-cards" aria-label="Колода ролей">
+            <!-- Карты создаются скриптом -->
+          </div>
+        </div>
       </div>
+
+      <div class="roles-players roles-players--right" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
+    </section>
 
       <div class="roles-players roles-players--right" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
     </section>
