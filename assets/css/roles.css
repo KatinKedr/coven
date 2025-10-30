@@ -457,6 +457,7 @@ body::before {
 .roles-actions {
   display: flex;
   justify-content: center;
+  margin-top: clamp(0.2rem, 1vh, 0.8rem);
 }
 
 .roles-continue {
