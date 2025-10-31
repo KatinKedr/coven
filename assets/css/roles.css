@@ -301,7 +301,7 @@ body::before {
   gap: clamp(0.8rem, 2.2vw, 1.4rem);
   width: 100%;
   max-width: clamp(150px, 16vw, 190px);
-  margin-top: clamp(-1.2rem, -3.2vh, -0.5rem);
+  margin-top: clamp(-1.8rem, -4.6vh, -0.9rem);
   pointer-events: auto;
 }
 
