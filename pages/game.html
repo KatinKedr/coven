@@ -19,13 +19,15 @@
   <div class="fog-overlay" aria-hidden="true"></div>
 
   <main class="roles-layout game-layout" role="main">
+    <section class="game-turn" role="status" aria-live="polite">
+      <p class="game-turn__label"></p>
+      <p class="game-turn__note" aria-live="polite"></p>
+    </section>
+
     <section class="roles-stage game-stage" aria-label="Игровое поле">
       <div class="roles-players roles-players--left game-players" aria-live="polite" aria-label="Сёстры ритуала слева"></div>
 
-      <div class="game-status" role="status" aria-live="polite">
-        <p class="game-status__turn"></p>
-        <p class="game-status__note" aria-live="polite"></p>
-      </div>
+      <div class="game-stage__void" aria-hidden="true"></div>
 
       <div class="roles-players roles-players--right game-players" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
     </section>

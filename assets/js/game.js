@@ -14,8 +14,8 @@ const parseStoredArray = (value) => {
 document.addEventListener('DOMContentLoaded', () => {
   const leftPlayersContainer = document.querySelector('.roles-players--left');
   const rightPlayersContainer = document.querySelector('.roles-players--right');
-  const turnStatus = document.querySelector('.game-status__turn');
-  const noteStatus = document.querySelector('.game-status__note');
+  const turnStatus = document.querySelector('.game-turn__label');
+  const noteStatus = document.querySelector('.game-turn__note');
   const finishBtn = document.querySelector('.game-finish');
 
   if (!leftPlayersContainer || !rightPlayersContainer || !turnStatus || !finishBtn) {
