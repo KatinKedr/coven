@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (noteStatus && triggerIndex !== null && playersData[triggerIndex]) {
-      noteStatus.textContent = `${playersData[triggerIndex].name} набрала 200 очков!`;
+      noteStatus.textContent = `${playersData[triggerIndex].name} набрав(ла) 200 балів!`;
     }
 
     if (finishBtn.hidden) {
