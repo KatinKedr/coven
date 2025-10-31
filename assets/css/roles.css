@@ -596,8 +596,8 @@ body::before {
   align-items: stretch;
   justify-content: flex-start;
   min-height: 0;
-  padding: clamp(4.8rem, 12vw, 6.8rem) clamp(2.1rem, 5vw, 3.4rem)
-    clamp(1.4rem, 3.8vw, 2.2rem);
+  padding: clamp(5.2rem, 12vw, 7.4rem) clamp(2.1rem, 5vw, 3.4rem)
+    clamp(0.7rem, 2.6vw, 1.4rem);
   text-align: center;
   gap: clamp(0.68rem, 1.8vw, 1rem);
 }
@@ -638,7 +638,7 @@ body::before {
   text-align: left;
   color: rgba(219, 249, 244, 0.88);
   line-height: 1.38;
-  padding: 0 clamp(0.45rem, 1.6vw, 1rem) clamp(0.8rem, 2.6vw, 1.4rem)
+  padding: 0 clamp(0.45rem, 1.6vw, 1rem) clamp(0.5rem, 2.2vw, 1rem)
     clamp(0.45rem, 1.6vw, 1rem);
   margin: clamp(0.6rem, 2vw, 1.4rem) auto 0;
 }
