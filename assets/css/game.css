@@ -33,7 +33,7 @@
 }
 
 .game-stage {
-  margin-top: clamp(0.4rem, 1.5vh, 1rem);
+  margin-top: clamp(0.1rem, 0.9vh, 0.6rem);
   align-items: center;
   grid-template-columns: minmax(190px, 0.82fr) minmax(320px, 1.1fr) minmax(190px, 0.82fr);
   gap: clamp(1rem, 3vw, 2.4rem);
@@ -41,7 +41,7 @@
 }
 
 .game-players {
-  margin-top: clamp(0.6rem, 3vh, 2.2rem);
+  margin-top: clamp(0.2rem, 1.8vh, 1.6rem);
 }
 
 .game-stage__void {
@@ -140,7 +140,7 @@
     width: min(100%, 460px);
     align-items: center;
     text-align: center;
-    margin-top: clamp(1.4rem, 6vh, 2.8rem);
+    margin-top: clamp(0.9rem, 4.8vh, 2.2rem);
   }
 
   .roles-players--left,
