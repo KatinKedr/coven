@@ -596,8 +596,8 @@ body::before {
   align-items: stretch;
   justify-content: flex-start;
   min-height: 0;
-  padding: clamp(5.2rem, 12vw, 7.4rem) clamp(2.1rem, 5vw, 3.4rem)
-    clamp(0.7rem, 2.6vw, 1.4rem);
+  padding: clamp(5.9rem, 13vw, 8rem) clamp(2.1rem, 5vw, 3.4rem)
+    clamp(0.4rem, 2.2vw, 1.1rem);
   text-align: center;
   gap: clamp(0.68rem, 1.8vw, 1rem);
 }
@@ -640,7 +640,7 @@ body::before {
   line-height: 1.38;
   padding: 0 clamp(0.45rem, 1.6vw, 1rem) clamp(0.5rem, 2.2vw, 1rem)
     clamp(0.45rem, 1.6vw, 1rem);
-  margin: clamp(0.6rem, 2vw, 1.4rem) auto 0;
+  margin: clamp(0.54rem, 1.8vw, 1.1rem) auto 0;
 }
 
 .role-popup__detail {
@@ -823,7 +823,7 @@ body::before {
 
 @media (max-height: 760px) {
   .role-popup__content {
-    padding: clamp(3.4rem, 9vw, 4.4rem) clamp(1.8rem, 4.6vw, 2.8rem)
-      clamp(1.1rem, 3vw, 1.8rem);
+    padding: clamp(3.3rem, 8.8vw, 4.4rem) clamp(1.8rem, 4.6vw, 2.8rem)
+      clamp(0.95rem, 2.8vw, 1.6rem);
   }
 }
