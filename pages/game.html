@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coven ✦ Игра — Процесс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/roles.css" />
+  <link rel="stylesheet" href="../assets/css/game.css" />
+  <link rel="stylesheet" href="../assets/css/cursor.css" />
+</head>
+<body>
+  <a href="roles.html" class="back-link">← Назад</a>
+  <div class="fog-drift" aria-hidden="true"></div>
+  <div class="fog-overlay" aria-hidden="true"></div>
+
+  <main class="roles-layout game-layout" role="main">
+    <section class="roles-stage game-stage" aria-label="Игровое поле">
+      <div class="roles-players roles-players--left game-players" aria-live="polite" aria-label="Сёстры ритуала слева"></div>
+
+      <div class="game-status" role="status" aria-live="polite">
+        <p class="game-status__turn"></p>
+        <p class="game-status__note" aria-live="polite"></p>
+      </div>
+
+      <div class="roles-players roles-players--right game-players" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
+    </section>
+
+    <div class="roles-actions game-actions">
+      <button class="coven-button game-finish" type="button" hidden data-next="../index.html">
+        Продолжить
+      </button>
+    </div>
+  </main>
+
+  <script src="../assets/js/cursor.js" defer></script>
+  <script src="../assets/js/game.js" defer></script>
+</body>
+</html>
