@@ -205,6 +205,109 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const deckPopup = document.querySelector('.game-deck-popup');
+  const deckButtons = document.querySelectorAll('[data-game-deck]');
+  const deckPopupTitle = deckPopup?.querySelector('[data-deck-field="title"]');
+  const deckPopupTasks = deckPopup?.querySelector('[data-deck-field="tasks"]');
+  const deckPopupDivider = deckPopup?.querySelector('.role-popup__divider');
+  let lastFocusedDeck = null;
+
+  const closeDeckPopup = () => {
+    if (!deckPopup || deckPopup.hidden) {
+      return;
+    }
+    deckPopup.hidden = true;
+    deckPopup.classList.remove('is-active');
+    document.removeEventListener('keydown', handleDeckPopupKeydown);
+    if (deckPopupTitle) {
+      deckPopupTitle.textContent = '';
+      deckPopupTitle.hidden = true;
+    }
+    if (deckPopupTasks) {
+      deckPopupTasks.replaceChildren();
+      deckPopupTasks.hidden = true;
+    }
+    if (deckPopupDivider) {
+      deckPopupDivider.hidden = true;
+    }
+    if (lastFocusedDeck instanceof HTMLElement) {
+      lastFocusedDeck.focus({ preventScroll: true });
+    }
+    lastFocusedDeck = null;
+  };
+
+  const handleDeckPopupKeydown = (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeDeckPopup();
+    }
+  };
+
+  const openDeckPopup = (trigger) => {
+    if (!deckPopup || !deckPopupTitle || !deckPopupTasks) {
+      return;
+    }
+
+    const title = typeof trigger.dataset.deckTitle === 'string' ? trigger.dataset.deckTitle.trim() : '';
+    const content = typeof trigger.dataset.deckContent === 'string' ? trigger.dataset.deckContent.trim() : '';
+
+    deckPopupTitle.textContent = title;
+    deckPopupTitle.hidden = title.length === 0;
+
+    deckPopupTasks.replaceChildren();
+    if (content.length > 0) {
+      const paragraph = document.createElement('p');
+      paragraph.className = 'game-deck-popup__text';
+      paragraph.textContent = content;
+      deckPopupTasks.append(paragraph);
+      deckPopupTasks.hidden = false;
+    } else {
+      deckPopupTasks.hidden = true;
+    }
+
+    if (deckPopupDivider) {
+      deckPopupDivider.hidden = deckPopupTitle.hidden && deckPopupTasks.hidden;
+    }
+
+    deckPopup.hidden = false;
+    deckPopup.classList.add('is-active');
+    document.addEventListener('keydown', handleDeckPopupKeydown);
+
+    lastFocusedDeck = trigger;
+
+    const closeButton = deckPopup.querySelector('.role-popup__close');
+    if (closeButton instanceof HTMLElement) {
+      closeButton.focus({ preventScroll: true });
+    }
+  };
+
+  if (deckPopup && deckButtons.length > 0) {
+    deckPopup.hidden = true;
+    if (deckPopupTitle) {
+      deckPopupTitle.hidden = true;
+    }
+    if (deckPopupTasks) {
+      deckPopupTasks.hidden = true;
+    }
+    if (deckPopupDivider) {
+      deckPopupDivider.hidden = true;
+    }
+
+    deckButtons.forEach((deckButton) => {
+      deckButton.addEventListener('click', () => {
+        openDeckPopup(deckButton);
+      });
+    });
+
+    deckPopup.addEventListener('click', (event) => {
+      const target = event.target instanceof HTMLElement ? event.target.closest('[data-close-popup]') : null;
+      if (target) {
+        event.preventDefault();
+        closeDeckPopup();
+      }
+    });
+  }
+
   if (finishBtn) {
     finishBtn.addEventListener('click', () => {
       const target = finishBtn.dataset.next;
