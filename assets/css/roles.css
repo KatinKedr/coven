@@ -596,10 +596,10 @@ body::before {
   align-items: stretch;
   justify-content: flex-start;
   min-height: 0;
-  padding: clamp(5.9rem, 13vw, 8rem) clamp(2.1rem, 5vw, 3.4rem)
-    clamp(0.4rem, 2.2vw, 1.1rem);
+  padding: clamp(6.6rem, 14vw, 8.6rem) clamp(2.1rem, 5vw, 3.4rem)
+    clamp(0.32rem, 1.8vw, 0.9rem);
   text-align: center;
-  gap: clamp(0.68rem, 1.8vw, 1rem);
+  gap: clamp(0.6rem, 1.6vw, 0.92rem);
 }
 
 .role-popup__name {
@@ -823,7 +823,8 @@ body::before {
 
 @media (max-height: 760px) {
   .role-popup__content {
-    padding: clamp(3.3rem, 8.8vw, 4.4rem) clamp(1.8rem, 4.6vw, 2.8rem)
-      clamp(0.95rem, 2.8vw, 1.6rem);
+    padding: clamp(3.9rem, 9.8vw, 5rem) clamp(1.8rem, 4.6vw, 2.8rem)
+      clamp(0.85rem, 2.4vw, 1.4rem);
+    gap: clamp(0.56rem, 1.4vw, 0.86rem);
   }
 }
