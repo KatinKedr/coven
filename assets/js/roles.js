@@ -45,22 +45,27 @@ const createCardElement = (index) => {
 
 const assignRoleToPlayer = (playerEl, role) => {
   if (!playerEl) {
-    return;
+    return '';
   }
+  let summary = '';
   const roleEl = playerEl.querySelector('.roles-player__role');
   if (roleEl) {
     roleEl.textContent = role.title;
-    const summary =
+    const hintCandidate =
       typeof role.hint === 'string' && role.hint.trim().length > 0
-        ? role.hint
+        ? role.hint.trim()
         : role.description?.who;
-    if (summary) {
+    if (typeof hintCandidate === 'string') {
+      summary = hintCandidate.trim();
+    }
+    if (summary.length > 0) {
       roleEl.setAttribute('data-hint', summary);
     } else {
       roleEl.removeAttribute('data-hint');
     }
   }
   playerEl.classList.add('is-complete');
+  return summary;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -116,6 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.replace('players.html');
     return;
   }
+
+  sessionStorage.removeItem('covenAssignments');
+
+  const assignments = storedNames.map((name) => ({
+    name,
+    roleTitle: '',
+    roleSummary: '',
+    roleDetails: null,
+  }));
+
+  const persistAssignments = () => {
+    try {
+      sessionStorage.setItem('covenAssignments', JSON.stringify(assignments));
+    } catch (error) {
+      console.warn('Не удалось сохранить распределение ролей', error);
+    }
+  };
 
   const roles = shuffle([
     {
@@ -299,7 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    assignRoleToPlayer(playerEl, role);
+    const summary = assignRoleToPlayer(playerEl, role);
+    assignments[playerIndex] = {
+      name: storedNames[playerIndex] ?? '',
+      roleTitle: role.title,
+      roleSummary: summary,
+      roleDetails: role.description ?? null,
+    };
+    persistAssignments();
     playerEl.classList.remove('is-active');
 
     card.classList.remove('is-pending');
