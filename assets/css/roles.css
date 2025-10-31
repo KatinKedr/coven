@@ -118,7 +118,7 @@ body::before {
   flex-direction: column;
   align-items: center;
   gap: clamp(0.8rem, 2.8vh, 1.6rem);
-  padding: clamp(0.8rem, 3.6vh, 1.8rem) clamp(0.6rem, 2vw, 1.2rem) clamp(0.4rem, 2.2vh, 1.1rem);
+  padding: clamp(0.8rem, 3.6vh, 1.8rem) clamp(0.6rem, 2vw, 1.2rem) clamp(4.8rem, 12vh, 6.4rem);
 }
 
 .roles-header {
@@ -515,17 +515,25 @@ body::before {
 }
 
 .roles-layout,
-.roles-stage,
-.roles-actions {
+.roles-stage {
   transition: margin 0.35s ease;
 }
 
 .roles-actions {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(1.8rem, 5vh, 3.2rem);
+  transform: translateX(-50%);
+  z-index: 7;
   display: flex;
   justify-content: center;
-  margin-top: clamp(-5.2rem, -9vh, -1.6rem);
-  margin-bottom: clamp(0.4rem, 1.6vh, 0.9rem);
-  padding-bottom: clamp(0.1rem, 0.8vh, 0.4rem);
+  width: 100%;
+  padding: 0 clamp(0.6rem, 2vw, 1.2rem);
+  pointer-events: none;
+}
+
+.roles-actions > * {
+  pointer-events: auto;
 }
 
 .roles-continue {
@@ -711,7 +719,7 @@ body::before {
 @media (max-height: 880px) {
   .roles-layout {
     gap: clamp(0.7rem, 2.2vh, 1.3rem);
-    padding: clamp(0.6rem, 3vh, 1.4rem) clamp(0.6rem, 2vw, 1.2rem) clamp(0.3rem, 1.6vh, 0.7rem);
+    padding: clamp(0.6rem, 3vh, 1.4rem) clamp(0.6rem, 2vw, 1.2rem) clamp(3.6rem, 10vh, 4.8rem);
   }
 
   .roles-stage {
@@ -719,7 +727,7 @@ body::before {
   }
 
   .roles-actions {
-    margin-top: clamp(-4.2rem, -7.5vh, -1.6rem);
+    bottom: clamp(1.4rem, 5vh, 2.6rem);
   }
 }
 
@@ -772,8 +780,8 @@ body::before {
   }
 
   .roles-actions {
-    margin-top: clamp(-3rem, -5.5vh, -1.2rem);
-    margin-bottom: clamp(1rem, 3vh, 1.6rem);
+    bottom: clamp(1.2rem, 6vh, 2.4rem);
+    padding: 0 clamp(1rem, 4vw, 1.6rem);
   }
 }
 
