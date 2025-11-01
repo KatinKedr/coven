@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scores = players.map(() => 0);
   let turnsUntilEvent = getRandomIntInclusive(3, 6);
   let currentEvent = null;
+  const finishThreshold = 100;
   let finishNote = '';
   let lastOpenedDeckType = null;
 
@@ -182,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const updateFinishButton = (triggerIndex = null) => {
-    const hasThreshold = scores.some((score) => score >= 200);
+    const hasThreshold = scores.some((score) => score >= finishThreshold);
     if (!hasThreshold) {
       if (!finishBtn.hidden) {
         finishBtn.hidden = true;
@@ -193,10 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (triggerIndex !== null && playersData[triggerIndex]) {
-      finishNote = `${playersData[triggerIndex].name} набрав(ла) 200 балів! Можна завершити гру або продовжити.`;
+      finishNote = `${playersData[triggerIndex].name} набрав(ла) ${finishThreshold} балів! Можна завершити гру або продовжити.`;
     }
     if (!finishNote) {
-      finishNote = 'Хтось набрав 200 балів. Ви можете завершити гру або продовжити.';
+      finishNote = `Хтось набрав ${finishThreshold} балів. Ви можете завершити гру або продовжити.`;
     }
 
     if (finishBtn.hidden) {
@@ -223,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scoreLabel) {
       scoreLabel.textContent = String(nextScore);
     }
-    updateFinishButton(delta > 0 && nextScore >= 200 ? playerIndex : null);
+    updateFinishButton(delta > 0 && nextScore >= finishThreshold ? playerIndex : null);
   };
 
   players.forEach((player, index) => {
