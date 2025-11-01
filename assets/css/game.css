@@ -186,6 +186,31 @@
   outline: none;
 }
 
+.game-deck--highlight {
+  animation: game-deck-highlight 1.6s ease-in-out infinite;
+  filter: saturate(1.12) brightness(1.06);
+}
+
+.game-deck--highlight .game-deck__shadow {
+  opacity: 0.95;
+  transform: translateY(clamp(4px, 1vh, 6px));
+}
+
+.game-deck--highlight .game-deck__card--top {
+  transform: translateY(clamp(-6px, -1.2vh, -4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 0.85));
+  filter: saturate(1.15) brightness(1.09);
+}
+
+@keyframes game-deck-highlight {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(clamp(-5px, -1.2vh, -3px)) scale(1.015);
+  }
+}
+
 .game-deck:hover .game-deck__shadow,
 .game-deck:focus-visible .game-deck__shadow {
   opacity: 0.95;
@@ -294,16 +319,34 @@
   display: inline-block;
 }
 
-.game-actions {
-  pointer-events: none;
+
+.game-finish-link {
+  position: fixed;
+  top: clamp(1.6rem, 4vw, 2.2rem);
+  right: clamp(1.8rem, 4.5vw, 2.6rem);
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: inherit;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(219, 249, 244, 0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 60;
 }
 
-.game-actions > * {
-  pointer-events: auto;
+.game-finish-link:hover,
+.game-finish-link:focus-visible {
+  opacity: 1;
+  transform: translateX(8px);
 }
 
-.game-finish {
-  min-width: clamp(220px, 32vw, 340px);
+.game-finish-link:focus {
+  outline: none;
 }
 
 @media (max-width: 1024px) {
