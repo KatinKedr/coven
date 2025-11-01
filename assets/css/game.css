@@ -231,35 +231,38 @@
   transform: translateY(clamp(2px, 0.6vh, 4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 1.1));
 }
 
+
 .game-deck-popup .role-popup__content {
   justify-content: flex-start;
-  padding: clamp(6.4rem, 13vw, 8.6rem) clamp(2.2rem, 4.6vw, 3.1rem)
-    clamp(2.2rem, 6.2vw, 3rem);
+  padding: clamp(5.1rem, 11.2vw, 7.4rem) clamp(2rem, 4.4vw, 3rem)
+    clamp(2.4rem, 6vw, 3.4rem);
 }
 
 .game-deck-popup__tasks {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: clamp(0.45rem, 1.4vw, 0.9rem);
-  width: min(100%, clamp(16.5rem, 76%, 22rem));
-  margin: clamp(-0.4rem, -1vw, -0.2rem) auto 0;
-  padding: clamp(1.2rem, 3.4vw, 2rem) clamp(0.9rem, 3.6vw, 1.9rem)
-    clamp(1.8rem, 4.2vw, 2.6rem);
+  display: grid;
+  place-items: center;
+  width: min(100%, clamp(17.6rem, 68%, 21.8rem));
+  margin: clamp(-0.6rem, -1.8vw, -0.3rem) auto clamp(0.4rem, 1.4vw, 0.9rem);
+  padding: clamp(1.7rem, 4vw, 2.4rem) clamp(1.4rem, 3.6vw, 2.1rem)
+    clamp(1.6rem, 3.8vw, 2.2rem);
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.12rem, 2.6vw, 1.58rem);
-  color: rgba(219, 249, 244, 0.9);
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+  font-size: clamp(1.22rem, 3vw, 1.74rem);
+  font-weight: 500;
+  color: rgba(219, 249, 244, 0.92);
+  letter-spacing: 0.015em;
+  line-height: 1.4;
   text-align: center;
-  word-break: break-word;
+  text-wrap: balance;
+  background: linear-gradient(180deg, rgba(53, 6, 27, 0.22), rgba(18, 8, 24, 0.38));
+  border-radius: clamp(0.8rem, 2vw, 1.3rem);
+  box-shadow: inset 0 0 0 1px rgba(249, 212, 155, 0.08),
+    0 16px 36px rgba(7, 5, 17, 0.34);
 }
 
 .game-deck-popup__text {
   margin: 0;
-  text-align: center;
+  max-width: 100%;
 }
 
 .game-deck-popup__tasks[hidden] {
