@@ -45,9 +45,185 @@
 }
 
 .game-stage__void {
+  position: relative;
   min-height: clamp(320px, 45vh, 420px);
   border-radius: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(0.35rem, 2vw, 1.2rem) clamp(1.4rem, 3.6vw, 2.6rem) clamp(1.9rem, 5.4vw, 3.2rem);
   pointer-events: none;
+}
+
+.game-decks {
+  position: relative;
+  display: grid;
+  gap: clamp(1.6rem, 3.8vw, 3.2rem);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: min(100%, 640px);
+  margin-inline: auto;
+  pointer-events: auto;
+}
+
+.game-decks::before,
+.game-decks::after {
+  content: '';
+  position: absolute;
+  inset: clamp(-12%, -4vw, -2.4rem);
+  border-radius: 40% 60% 58% 42% / 48% 44% 56% 52%;
+  background: radial-gradient(circle at 42% 32%, rgba(251, 31, 23, 0.22), rgba(4, 5, 15, 0));
+  filter: blur(48px);
+  z-index: -1;
+}
+
+.game-decks::after {
+  background: radial-gradient(circle at 68% 68%, rgba(62, 137, 137, 0.26), rgba(4, 5, 15, 0));
+  opacity: 0.75;
+}
+
+.game-decks__row {
+  display: flex;
+  gap: clamp(1.6rem, 4.2vw, 3rem);
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.game-decks__row--auxiliary {
+  gap: clamp(1.4rem, 3.4vw, 2.4rem);
+}
+
+.game-deck {
+  --deck-width: clamp(134px, 13.2vw, 196px);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--deck-width);
+  aspect-ratio: 2080 / 3508;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.game-deck--auxiliary {
+  --deck-width: clamp(114px, 11.6vw, 162px);
+}
+
+.game-deck__shadow {
+  position: absolute;
+  inset: clamp(14%, 3.4vw, 24%) clamp(12%, 3vw, 18%) clamp(-4%, -1vw, -12%) clamp(12%, 3vw, 18%);
+  background: radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  filter: blur(18px);
+  opacity: 0.8;
+  z-index: -2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.game-deck__cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game-deck__card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: clamp(16px, 2.2vw, 22px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  transition: transform 0.32s ease, filter 0.32s ease, box-shadow 0.32s ease;
+}
+
+.game-deck__card--bottom {
+  transform: translateY(clamp(16px, 3.2vh, 22px)) rotate(-6deg);
+  filter: saturate(0.48) brightness(0.74);
+}
+
+.game-deck__card--middle {
+  transform: translateY(clamp(8px, 2.2vh, 14px)) rotate(4deg);
+  filter: saturate(0.65) brightness(0.82);
+}
+
+.game-deck__card--top {
+  transform: translateY(0) rotate(var(--deck-top-tilt, -1deg));
+  filter: saturate(0.92) brightness(0.96);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.62);
+}
+
+.game-deck--main-1 {
+  --deck-top-tilt: -2.5deg;
+}
+
+.game-deck--main-2 {
+  --deck-top-tilt: 1.6deg;
+}
+
+.game-deck--main-3 {
+  --deck-top-tilt: -0.8deg;
+}
+
+.game-deck--aux-1 {
+  --deck-top-tilt: 2.8deg;
+}
+
+.game-deck--aux-2 {
+  --deck-top-tilt: -3.2deg;
+}
+
+.game-deck:hover,
+.game-deck:focus-visible {
+  transform: translateY(clamp(-6px, -1.4vh, -4px)) scale(1.02);
+  filter: saturate(1.04) brightness(1.02);
+  outline: none;
+}
+
+.game-deck:hover .game-deck__shadow,
+.game-deck:focus-visible .game-deck__shadow {
+  opacity: 0.95;
+  transform: translateY(clamp(4px, 1vh, 6px));
+}
+
+.game-deck:hover .game-deck__card--top,
+.game-deck:focus-visible .game-deck__card--top {
+  transform: translateY(clamp(-6px, -1.2vh, -4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 0.85));
+  filter: saturate(1.05) brightness(1.04);
+}
+
+.game-deck:active {
+  transform: scale(0.99);
+}
+
+.game-deck:active .game-deck__card--top {
+  transform: translateY(clamp(2px, 0.6vh, 4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 1.1));
+}
+
+.game-deck-popup__tasks {
+  display: grid;
+  gap: clamp(0.5rem, 1.8vw, 0.9rem);
+  justify-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.82rem, 1.6vw, 0.98rem);
+  color: rgba(219, 249, 244, 0.86);
+  letter-spacing: 0.04em;
+}
+
+.game-deck-popup__text {
+  margin: 0;
+  text-align: center;
+  line-height: 1.46;
+}
+
+.game-deck-popup__tasks[hidden] {
+  display: none;
 }
 
 .game-player {
@@ -74,29 +250,33 @@
 }
 
 .game-player__score-button {
-  width: clamp(38px, 6vmin, 46px);
-  height: clamp(38px, 6vmin, 46px);
-  border-radius: 50%;
-  border: 1px solid rgba(219, 249, 244, 0.32);
-  background: rgba(6, 27, 35, 0.68);
-  color: var(--coven-fog);
+  border: none;
+  background: transparent;
+  color: rgba(249, 212, 155, 0.92);
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.6rem, 2.8vw, 2rem);
-  display: grid;
-  place-items: center;
+  font-size: clamp(1.7rem, 3vw, 2.1rem);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.1rem, 0.8vw, 0.3rem);
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  text-shadow: 0 0 12px rgba(249, 212, 155, 0.48), 0 0 26px rgba(98, 217, 238, 0.32);
+  transition: transform 0.2s ease, text-shadow 0.25s ease;
 }
 
 .game-player__score-button:hover,
 .game-player__score-button:focus-visible {
-  transform: translateY(-2px) scale(1.02);
-  border-color: rgba(249, 212, 155, 0.65);
-  box-shadow: 0 0 18px rgba(249, 212, 155, 0.38);
+  transform: translateY(-1px) scale(1.05);
+  text-shadow: 0 0 18px rgba(249, 212, 155, 0.72), 0 0 34px rgba(98, 217, 238, 0.42);
+}
+
+.game-player__score-button:focus-visible {
+  outline: none;
 }
 
 .game-player__score-button:active {
-  transform: scale(0.96);
+  transform: scale(0.94);
 }
 
 .game-player__score-value {
@@ -149,7 +329,37 @@
   }
 
   .game-stage__void {
-    display: none;
+    order: 2;
+    width: min(100%, 440px);
+    min-height: clamp(260px, 46vh, 360px);
+    padding: clamp(1rem, 4vw, 2rem) clamp(0.9rem, 3.6vw, 1.6rem);
+    margin-inline: auto;
+  }
+
+  .roles-players--left {
+    order: 1;
+  }
+
+  .roles-players--right {
+    order: 3;
+  }
+
+  .game-decks {
+    width: min(100%, 420px);
+    gap: clamp(1.1rem, 3.4vh, 1.8rem);
+  }
+
+  .game-decks__row {
+    gap: clamp(1rem, 3.2vh, 1.6rem);
+    flex-wrap: wrap;
+  }
+
+  .game-deck {
+    --deck-width: clamp(112px, 28vw, 150px);
+  }
+
+  .game-deck--auxiliary {
+    --deck-width: clamp(98px, 24vw, 132px);
   }
 
   .game-turn {
@@ -172,7 +382,28 @@
   }
 
   .game-player__score-button {
-    width: clamp(34px, 10vw, 40px);
-    height: clamp(34px, 10vw, 40px);
+    font-size: clamp(1.6rem, 8vw, 1.9rem);
+  }
+
+  .game-stage__void {
+    width: min(100%, 360px);
+    min-height: clamp(220px, 42vh, 320px);
+    padding: clamp(0.45rem, 4.4vw, 1.1rem) clamp(0.6rem, 4vw, 1.1rem) clamp(1.4rem, 6vw, 2.2rem);
+  }
+
+  .game-decks {
+    gap: clamp(0.9rem, 4.4vw, 1.4rem);
+  }
+
+  .game-decks__row {
+    gap: clamp(0.8rem, 4.2vw, 1.2rem);
+  }
+
+  .game-deck {
+    --deck-width: clamp(106px, 42vw, 136px);
+  }
+
+  .game-deck--auxiliary {
+    --deck-width: clamp(92px, 38vw, 120px);
   }
 }
