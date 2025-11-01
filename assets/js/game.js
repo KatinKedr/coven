@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const parts = [];
     if (currentEvent) {
       const eventLabel =
-        currentEvent === 'ritual' ? 'Время ритуала' : 'Время раскрыть загадку';
+        currentEvent === 'ritual' ? 'Время ритуала' : 'Время разгадать загадку';
       parts.push(`${eventLabel}! Возьмите карту из дополнительной колоды.`);
     }
     if (finishNote) {
@@ -158,9 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
       noteStatus.textContent = parts.join(' • ');
     }
 
-    const shouldHighlightAuxiliary = Boolean(currentEvent);
     auxiliaryDecks.forEach((deck) => {
-      deck.classList.toggle('game-deck--highlight', shouldHighlightAuxiliary);
+      const isRitualDeck = deck.classList.contains('game-deck--aux-1');
+      const isMysteryDeck = deck.classList.contains('game-deck--aux-2');
+      const shouldHighlight =
+        (currentEvent === 'ritual' && isRitualDeck) ||
+        (currentEvent === 'mystery' && isMysteryDeck);
+      deck.classList.toggle('game-deck--highlight', shouldHighlight);
     });
   };
 
