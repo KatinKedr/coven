@@ -319,16 +319,34 @@
   display: inline-block;
 }
 
-.game-actions {
-  pointer-events: none;
+
+.game-finish-link {
+  position: fixed;
+  top: clamp(1.6rem, 4vw, 2.2rem);
+  right: clamp(1.8rem, 4.5vw, 2.6rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: rgba(219, 249, 244, 0.88);
+  font-size: 0.95rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 60;
 }
 
-.game-actions > * {
-  pointer-events: auto;
+.game-finish-link:hover,
+.game-finish-link:focus-visible {
+  opacity: 0.8;
+  transform: translateX(6px);
 }
 
-.game-finish {
-  min-width: clamp(220px, 32vw, 340px);
+.game-finish-link:focus {
+  outline: none;
 }
 
 @media (max-width: 1024px) {

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const rightPlayersContainer = document.querySelector('.roles-players--right');
   const turnStatus = document.querySelector('.game-turn__label');
   const noteStatus = document.querySelector('.game-turn__note');
-  const finishBtn = document.querySelector('.game-finish');
+  const finishBtn = document.querySelector('.game-finish-link');
 
   if (!leftPlayersContainer || !rightPlayersContainer || !turnStatus || !finishBtn) {
     return;
@@ -200,12 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       finishNote = `Хтось набрав ${finishThreshold} балів. Ви можете завершити гру або продовжити.`;
     }
 
-    if (finishBtn.hidden) {
-      finishBtn.hidden = false;
-      window.setTimeout(() => {
-        finishBtn.focus({ preventScroll: true });
-      }, 120);
-    }
+    finishBtn.hidden = false;
 
     renderNote();
   };
