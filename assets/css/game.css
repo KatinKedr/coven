@@ -231,20 +231,34 @@
   transform: translateY(clamp(2px, 0.6vh, 4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 1.1));
 }
 
+.game-deck-popup .role-popup__content {
+  justify-content: flex-start;
+  padding: clamp(6.4rem, 13vw, 8.6rem) clamp(2.2rem, 4.6vw, 3.1rem)
+    clamp(2.2rem, 6.2vw, 3rem);
+}
+
 .game-deck-popup__tasks {
-  display: grid;
-  gap: clamp(0.5rem, 1.8vw, 0.9rem);
-  justify-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.45rem, 1.4vw, 0.9rem);
+  width: min(100%, clamp(16.5rem, 76%, 22rem));
+  margin: 0 auto;
+  padding: clamp(0.8rem, 2.8vw, 1.6rem) clamp(0.9rem, 3.6vw, 1.9rem);
   font-family: 'Inter', sans-serif;
-  font-size: clamp(0.82rem, 1.6vw, 0.98rem);
-  color: rgba(219, 249, 244, 0.86);
-  letter-spacing: 0.04em;
+  font-size: clamp(1.02rem, 2.4vw, 1.45rem);
+  color: rgba(219, 249, 244, 0.9);
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+  text-align: center;
+  word-break: break-word;
 }
 
 .game-deck-popup__text {
   margin: 0;
   text-align: center;
-  line-height: 1.46;
 }
 
 .game-deck-popup__tasks[hidden] {
