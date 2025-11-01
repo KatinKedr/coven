@@ -407,9 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const deckPopup = document.querySelector('.game-deck-popup');
   const deckButtons = document.querySelectorAll('[data-game-deck]');
-  const deckPopupTitle = deckPopup?.querySelector('[data-deck-field="title"]');
   const deckPopupTasks = deckPopup?.querySelector('[data-deck-field="tasks"]');
-  const deckPopupDivider = deckPopup?.querySelector('.role-popup__divider');
   let lastFocusedDeck = null;
 
   const closeDeckPopup = () => {
@@ -419,16 +417,9 @@ document.addEventListener('DOMContentLoaded', () => {
     deckPopup.hidden = true;
     deckPopup.classList.remove('is-active');
     document.removeEventListener('keydown', handleDeckPopupKeydown);
-    if (deckPopupTitle) {
-      deckPopupTitle.textContent = '';
-      deckPopupTitle.hidden = true;
-    }
     if (deckPopupTasks) {
       deckPopupTasks.replaceChildren();
       deckPopupTasks.hidden = true;
-    }
-    if (deckPopupDivider) {
-      deckPopupDivider.hidden = true;
     }
     if (lastFocusedDeck instanceof HTMLElement) {
       lastFocusedDeck.focus({ preventScroll: true });
@@ -471,11 +462,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const openDeckPopup = (trigger) => {
-    if (!deckPopup || !deckPopupTitle || !deckPopupTasks) {
+    if (!deckPopup || !deckPopupTasks) {
       return;
     }
 
-    const title = typeof trigger.dataset.deckTitle === 'string' ? trigger.dataset.deckTitle.trim() : '';
     const content = typeof trigger.dataset.deckContent === 'string' ? trigger.dataset.deckContent.trim() : '';
 
     if (trigger.classList.contains('game-deck--auxiliary')) {
@@ -483,9 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       lastOpenedDeckType = 'main';
     }
-
-    deckPopupTitle.textContent = title;
-    deckPopupTitle.hidden = title.length === 0;
 
     deckPopupTasks.replaceChildren();
     if (content.length > 0) {
@@ -496,10 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
       deckPopupTasks.hidden = false;
     } else {
       deckPopupTasks.hidden = true;
-    }
-
-    if (deckPopupDivider) {
-      deckPopupDivider.hidden = deckPopupTitle.hidden && deckPopupTasks.hidden;
     }
 
     deckPopup.hidden = false;
@@ -516,14 +499,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (deckPopup && deckButtons.length > 0) {
     deckPopup.hidden = true;
-    if (deckPopupTitle) {
-      deckPopupTitle.hidden = true;
-    }
     if (deckPopupTasks) {
       deckPopupTasks.hidden = true;
-    }
-    if (deckPopupDivider) {
-      deckPopupDivider.hidden = true;
     }
 
     deckButtons.forEach((deckButton) => {
