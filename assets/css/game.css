@@ -51,17 +51,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.4rem, 4vw, 2.6rem) clamp(1.2rem, 3vw, 2rem);
+  padding: clamp(1.4rem, 4vw, 2.8rem) clamp(1.4rem, 3.6vw, 2.6rem);
   pointer-events: none;
 }
 
 .game-decks {
   position: relative;
   display: grid;
-  gap: clamp(1.3rem, 3.6vw, 2.6rem);
+  gap: clamp(1.6rem, 3.8vw, 3.2rem);
+  justify-content: center;
   justify-items: center;
   align-items: center;
-  width: min(100%, 520px);
+  width: min(100%, 640px);
+  margin-inline: auto;
   pointer-events: auto;
 }
 
@@ -83,18 +85,19 @@
 
 .game-decks__row {
   display: flex;
-  gap: clamp(1.2rem, 3.4vw, 2.4rem);
+  gap: clamp(1.6rem, 4.2vw, 3rem);
   align-items: flex-end;
   justify-content: center;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .game-decks__row--auxiliary {
-  gap: clamp(1.1rem, 3vw, 2.1rem);
+  gap: clamp(1.4rem, 3.4vw, 2.4rem);
 }
 
 .game-deck {
-  --deck-width: clamp(118px, 12.5vw, 168px);
+  --deck-width: clamp(134px, 13.2vw, 196px);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -109,7 +112,7 @@
 }
 
 .game-deck--auxiliary {
-  --deck-width: clamp(102px, 10.8vw, 138px);
+  --deck-width: clamp(114px, 11.6vw, 162px);
 }
 
 .game-deck__shadow {
