@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coven ✦ Игра — Процесс</title>
+  <title>Coven ✦ Гра — Процес</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 <body>
   <a href="roles.html" class="back-link">← Назад</a>
   <button class="game-finish-link" type="button" hidden data-next="../index.html">
-    завершить игру
+    завершити гру
   </button>
   <div class="fog-drift" aria-hidden="true"></div>
   <div class="fog-overlay" aria-hidden="true"></div>
@@ -27,13 +27,13 @@
       <p class="game-turn__note" aria-live="polite"></p>
     </div>
 
-    <section class="roles-stage game-stage" aria-label="Игровое поле">
-      <div class="roles-players roles-players--left game-players" aria-live="polite" aria-label="Сёстры ритуала слева"></div>
+    <section class="roles-stage game-stage" aria-label="Ігрове поле">
+      <div class="roles-players roles-players--left game-players" aria-live="polite" aria-label="Сестри ритуалу зліва"></div>
 
       <div class="game-stage__void">
-        <section class="game-decks" aria-label="Игровые колоды">
+        <section class="game-decks" aria-label="Ігрові колоди">
           <div class="game-decks__row game-decks__row--main">
-            <button class="game-deck game-deck--primary game-deck--main-1" type="button" data-game-deck="main-1" data-deck-title="Колода I" aria-label="Открыть первую основную колоду">
+            <button class="game-deck game-deck--primary game-deck--main-1" type="button" data-game-deck="main-1" data-deck-title="Колода I" aria-label="Відкрити першу основну колоду">
               <span class="game-deck__shadow" aria-hidden="true"></span>
               <span class="game-deck__cards" aria-hidden="true">
                 <img class="game-deck__card game-deck__card--bottom" src="../image/deck-char.png" alt="" loading="lazy" />
@@ -42,7 +42,7 @@
               </span>
             </button>
 
-            <button class="game-deck game-deck--primary game-deck--main-2" type="button" data-game-deck="main-2" data-deck-title="Колода II" aria-label="Открыть вторую основную колоду">
+            <button class="game-deck game-deck--primary game-deck--main-2" type="button" data-game-deck="main-2" data-deck-title="Колода II" aria-label="Відкрити другу основну колоду">
               <span class="game-deck__shadow" aria-hidden="true"></span>
               <span class="game-deck__cards" aria-hidden="true">
                 <img class="game-deck__card game-deck__card--bottom" src="../image/deck-char.png" alt="" loading="lazy" />
@@ -51,7 +51,7 @@
               </span>
             </button>
 
-            <button class="game-deck game-deck--primary game-deck--main-3" type="button" data-game-deck="main-3" data-deck-title="Колода III" aria-label="Открыть третью основную колоду">
+            <button class="game-deck game-deck--primary game-deck--main-3" type="button" data-game-deck="main-3" data-deck-title="Колода III" aria-label="Відкрити третю основну колоду">
               <span class="game-deck__shadow" aria-hidden="true"></span>
               <span class="game-deck__cards" aria-hidden="true">
                 <img class="game-deck__card game-deck__card--bottom" src="../image/deck-char.png" alt="" loading="lazy" />
@@ -62,7 +62,7 @@
           </div>
 
           <div class="game-decks__row game-decks__row--auxiliary">
-            <button class="game-deck game-deck--auxiliary game-deck--aux-1" type="button" data-game-deck="aux-1" data-deck-title="Дополнительная колода I" aria-label="Открыть первую дополнительную колоду">
+            <button class="game-deck game-deck--auxiliary game-deck--aux-1" type="button" data-game-deck="aux-1" data-deck-title="Додаткова колода I" aria-label="Відкрити першу додаткову колоду">
               <span class="game-deck__shadow" aria-hidden="true"></span>
               <span class="game-deck__cards" aria-hidden="true">
                 <img class="game-deck__card game-deck__card--bottom" src="../image/deck-char.png" alt="" loading="lazy" />
@@ -71,7 +71,7 @@
               </span>
             </button>
 
-            <button class="game-deck game-deck--auxiliary game-deck--aux-2" type="button" data-game-deck="aux-2" data-deck-title="Дополнительная колода II" aria-label="Открыть вторую дополнительную колоду">
+            <button class="game-deck game-deck--auxiliary game-deck--aux-2" type="button" data-game-deck="aux-2" data-deck-title="Додаткова колода II" aria-label="Відкрити другу додаткову колоду">
               <span class="game-deck__shadow" aria-hidden="true"></span>
               <span class="game-deck__cards" aria-hidden="true">
                 <img class="game-deck__card game-deck__card--bottom" src="../image/deck-char.png" alt="" loading="lazy" />
@@ -83,7 +83,7 @@
         </section>
       </div>
 
-      <div class="roles-players roles-players--right game-players" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
+      <div class="roles-players roles-players--right game-players" aria-live="polite" aria-label="Сестри ритуалу справа"></div>
     </section>
   </main>
 
@@ -93,9 +93,9 @@
   <div class="role-popup game-deck-popup" role="dialog" aria-modal="true" hidden>
     <div class="role-popup__backdrop" data-close-popup aria-hidden="true"></div>
     <div class="role-popup__body">
-      <button class="role-popup__close" type="button" aria-label="Закрыть" data-close-popup>×</button>
+      <button class="role-popup__close" type="button" aria-label="Закрити" data-close-popup>×</button>
       <div class="role-popup__frame">
-        <img class="role-popup__image" src="../image/inside.png" alt="Мистическая карта" loading="lazy" />
+        <img class="role-popup__image" src="../image/inside.png" alt="Містична карта" loading="lazy" />
         <div class="role-popup__content">
           <div class="game-deck-popup__tasks" data-deck-field="tasks"></div>
         </div>

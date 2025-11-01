@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await document.exitFullscreen();
       }
     } catch (error) {
-      console.error('Не удалось переключить полноэкранный режим:', error);
+      console.error('Не вдалося перемкнути повноекранний режим:', error);
     }
   });
 });

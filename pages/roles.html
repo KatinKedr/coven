@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coven ✦ Игра — Роли</title>
+  <title>Coven ✦ Гра — Ролі</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
@@ -19,24 +19,24 @@
 
   <main class="roles-layout" role="main">
     <header class="roles-header">
-      <p class="roles-header__eyebrow">Ритуал начинается</p>
-      <h1 class="roles-header__title">Алтарь ролей</h1>
-      <p class="roles-instruction" role="status" aria-live="polite">Выбери карту</p>
+      <p class="roles-header__eyebrow">Ритуал розпочинається</p>
+      <h1 class="roles-header__title">Вівтар ролей</h1>
+      <p class="roles-instruction" role="status" aria-live="polite">Обери карту</p>
     </header>
 
-    <section class="roles-stage" aria-label="Сцена выбора роли">
-      <div class="roles-players roles-players--left" aria-live="polite" aria-label="Сёстры ритуала слева"></div>
+    <section class="roles-stage" aria-label="Сцена вибору ролі">
+      <div class="roles-players roles-players--left" aria-live="polite" aria-label="Сестри ритуалу зліва"></div>
 
       <div class="roles-cards" aria-label="Колода ролей">
-        <!-- Карты создаются скриптом -->
+        <!-- Карти створює скрипт -->
       </div>
 
-      <div class="roles-players roles-players--right" aria-live="polite" aria-label="Сёстры ритуала справа"></div>
+      <div class="roles-players roles-players--right" aria-live="polite" aria-label="Сестри ритуалу справа"></div>
     </section>
 
     <div class="roles-actions">
       <button class="coven-button roles-continue" type="button" hidden data-next="game.html">
-        Продолжить
+        Продовжити
       </button>
     </div>
   </main>
@@ -44,23 +44,23 @@
   <div class="role-popup" role="dialog" aria-modal="true" hidden>
     <div class="role-popup__backdrop" data-close-popup aria-hidden="true"></div>
     <div class="role-popup__body">
-      <button class="role-popup__close" type="button" aria-label="Закрыть" data-close-popup>×</button>
+      <button class="role-popup__close" type="button" aria-label="Закрити" data-close-popup>×</button>
       <div class="role-popup__frame">
-        <img class="role-popup__image" src="../image/inside.png" alt="Мистическая карта" loading="lazy" />
+        <img class="role-popup__image" src="../image/inside.png" alt="Містична карта" loading="lazy" />
         <div class="role-popup__content">
           <p class="role-popup__name"></p>
           <div class="role-popup__divider" aria-hidden="true"></div>
           <dl class="role-popup__details">
             <div class="role-popup__detail" data-role-detail="who">
-              <dt class="role-popup__detail-title">Кто ты</dt>
+              <dt class="role-popup__detail-title">Хто ти</dt>
               <dd class="role-popup__detail-text" data-role-field="who"></dd>
             </div>
             <div class="role-popup__detail" data-role-detail="howToPlay">
-              <dt class="role-popup__detail-title">Как играть</dt>
+              <dt class="role-popup__detail-title">Як грати</dt>
               <dd class="role-popup__detail-text" data-role-field="howToPlay"></dd>
             </div>
             <div class="role-popup__detail" data-role-detail="challenge">
-              <dt class="role-popup__detail-title">Испытание</dt>
+              <dt class="role-popup__detail-title">Випробування</dt>
               <dd class="role-popup__detail-text" data-role-field="challenge"></dd>
             </div>
             <div class="role-popup__detail" data-role-detail="superpower">
