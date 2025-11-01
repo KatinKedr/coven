@@ -125,8 +125,43 @@ document.addEventListener('DOMContentLoaded', () => {
     stage?.classList.add('roles-stage--split');
   }
 
+  const getRandomIntInclusive = (min, max) => {
+    const minCeil = Math.ceil(min);
+    const maxFloor = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloor - minCeil + 1)) + minCeil;
+  };
+
   let activePlayerIndex = 0;
   const scores = players.map(() => 0);
+  let turnsUntilEvent = getRandomIntInclusive(3, 6);
+  let currentEvent = null;
+  let finishNote = '';
+  let lastOpenedDeckType = null;
+
+  const auxiliaryDecks = Array.from(document.querySelectorAll(
+    '.game-deck--auxiliary'
+  ));
+
+  const renderNote = () => {
+    const parts = [];
+    if (currentEvent) {
+      const eventLabel =
+        currentEvent === 'ritual' ? 'Время ритуала' : 'Время раскрыть загадку';
+      parts.push(`${eventLabel}! Возьмите карту из дополнительной колоды.`);
+    }
+    if (finishNote) {
+      parts.push(finishNote);
+    }
+
+    if (noteStatus) {
+      noteStatus.textContent = parts.join(' • ');
+    }
+
+    const shouldHighlightAuxiliary = Boolean(currentEvent);
+    auxiliaryDecks.forEach((deck) => {
+      deck.classList.toggle('game-deck--highlight', shouldHighlightAuxiliary);
+    });
+  };
 
   const updateTurnStatus = () => {
     const active = playersData[activePlayerIndex];
@@ -135,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       turnStatus.textContent = 'Выберите, кто ходит первым';
     }
+    renderNote();
   };
 
   const setActivePlayer = (index) => {
@@ -151,14 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!finishBtn.hidden) {
         finishBtn.hidden = true;
       }
-      if (noteStatus) {
-        noteStatus.textContent = '';
-      }
+      finishNote = '';
+      renderNote();
       return;
     }
 
-    if (noteStatus && triggerIndex !== null && playersData[triggerIndex]) {
-      noteStatus.textContent = `${playersData[triggerIndex].name} набрав(ла) 200 балів!`;
+    if (triggerIndex !== null && playersData[triggerIndex]) {
+      finishNote = `${playersData[triggerIndex].name} набрав(ла) 200 балів! Можна завершити гру або продовжити.`;
+    }
+    if (!finishNote) {
+      finishNote = 'Хтось набрав 200 балів. Ви можете завершити гру або продовжити.';
     }
 
     if (finishBtn.hidden) {
@@ -167,6 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
         finishBtn.focus({ preventScroll: true });
       }, 120);
     }
+
+    renderNote();
   };
 
   const adjustScore = (playerIndex, delta) => {
@@ -234,6 +274,33 @@ document.addEventListener('DOMContentLoaded', () => {
       lastFocusedDeck.focus({ preventScroll: true });
     }
     lastFocusedDeck = null;
+
+    let eventResolved = false;
+    if (currentEvent && lastOpenedDeckType === 'auxiliary') {
+      currentEvent = null;
+      turnsUntilEvent = getRandomIntInclusive(3, 6);
+      eventResolved = true;
+    }
+
+    lastOpenedDeckType = null;
+
+    if (players.length > 0) {
+      if (!eventResolved) {
+        turnsUntilEvent = Math.max(turnsUntilEvent - 1, 0);
+      }
+
+      if (turnsUntilEvent <= 0 && !currentEvent) {
+        currentEvent = Math.random() < 0.5 ? 'ritual' : 'mystery';
+        turnsUntilEvent = 0;
+      }
+
+      const nextIndex = (activePlayerIndex + 1) % players.length;
+      setActivePlayer(nextIndex);
+
+      if (!currentEvent && turnsUntilEvent === 0) {
+        turnsUntilEvent = getRandomIntInclusive(3, 6);
+      }
+    }
   };
 
   const handleDeckPopupKeydown = (event) => {
@@ -250,6 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const title = typeof trigger.dataset.deckTitle === 'string' ? trigger.dataset.deckTitle.trim() : '';
     const content = typeof trigger.dataset.deckContent === 'string' ? trigger.dataset.deckContent.trim() : '';
+
+    if (trigger.classList.contains('game-deck--auxiliary')) {
+      lastOpenedDeckType = 'auxiliary';
+    } else {
+      lastOpenedDeckType = 'main';
+    }
 
     deckPopupTitle.textContent = title;
     deckPopupTitle.hidden = title.length === 0;

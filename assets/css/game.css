@@ -186,6 +186,31 @@
   outline: none;
 }
 
+.game-deck--highlight {
+  animation: game-deck-highlight 1.6s ease-in-out infinite;
+  filter: saturate(1.12) brightness(1.06);
+}
+
+.game-deck--highlight .game-deck__shadow {
+  opacity: 0.95;
+  transform: translateY(clamp(4px, 1vh, 6px));
+}
+
+.game-deck--highlight .game-deck__card--top {
+  transform: translateY(clamp(-6px, -1.2vh, -4px)) rotate(calc(var(--deck-top-tilt, 0deg) * 0.85));
+  filter: saturate(1.15) brightness(1.09);
+}
+
+@keyframes game-deck-highlight {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(clamp(-5px, -1.2vh, -3px)) scale(1.015);
+  }
+}
+
 .game-deck:hover .game-deck__shadow,
 .game-deck:focus-visible .game-deck__shadow {
   opacity: 0.95;
