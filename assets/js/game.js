@@ -867,6 +867,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const content = typeof trigger.dataset.deckContent === 'string' ? trigger.dataset.deckContent.trim() : '';
+    const category = typeof trigger.dataset.deckCategory === 'string' ? trigger.dataset.deckCategory.trim() : '';
 
     if (trigger.classList.contains('game-deck--auxiliary')) {
       lastOpenedDeckType = 'auxiliary';
@@ -876,6 +877,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     deckPopupTasks.replaceChildren();
     if (content.length > 0) {
+      if (category.length > 0) {
+        const categoryEl = document.createElement('p');
+        categoryEl.className = 'game-deck-popup__category';
+        categoryEl.textContent = category;
+        deckPopupTasks.append(categoryEl);
+      }
+
       const paragraph = document.createElement('p');
       paragraph.className = 'game-deck-popup__text';
       paragraph.textContent = content;
