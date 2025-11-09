@@ -947,6 +947,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) {
         return;
       }
+
+      const summary = playersData.map((player, index) => {
+        const score = Number.isFinite(scores[index]) ? scores[index] : 0;
+        return {
+          name: typeof player.name === 'string' && player.name.length > 0 ? player.name : `Игрок ${index + 1}`,
+          score,
+        };
+      });
+
+      const bestScore = summary.reduce((max, entry) => (entry.score > max ? entry.score : max), summary.length > 0 ? summary[0].score : 0);
+      const winners = summary.filter((entry) => entry.score === bestScore);
+
+      const payload = {
+        winners,
+        bestScore,
+        summary,
+        generatedAt: new Date().toISOString(),
+      };
+
+      try {
+        sessionStorage.setItem('covenWinner', JSON.stringify(payload));
+      } catch (error) {
+        console.warn('Не удалось сохранить информацию о победителе', error);
+      }
+
       const resolved = new URL(target, window.location.href);
       window.location.assign(resolved.href);
     });
