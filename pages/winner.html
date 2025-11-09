@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coven ✦ Игра — Победитель</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/winner.css" />
+  <link rel="stylesheet" href="../assets/css/cursor.css" />
+</head>
+<body>
+  <a href="game.html" class="back-link">← Назад</a>
+  <div class="fog-drift" aria-hidden="true"></div>
+  <div class="fog-overlay" aria-hidden="true"></div>
+
+  <main class="winner-layout" role="main">
+    <section class="winner-card" aria-labelledby="winner-title">
+      <div class="winner-confetti" data-winner-confetti aria-hidden="true"></div>
+
+      <header class="winner-header">
+        <p class="winner-header__eyebrow">Ритуал завершён</p>
+        <h1 class="winner-header__title" id="winner-title">Триумф ведьмы</h1>
+      </header>
+
+      <div class="winner-spotlight" role="status" aria-live="polite">
+        <p class="winner-announcement" data-winner-announcement>Переможець ритуалу</p>
+        <p class="winner-name" data-winner-name>...</p>
+        <p class="winner-score">набрано <span class="winner-score__value" data-winner-score>0</span> балів</p>
+      </div>
+
+      <section class="winner-summary" aria-label="Итоговые баллы">
+        <h2 class="winner-summary__title">Табло сяйва</h2>
+        <ul class="winner-list" data-winner-list>
+          <li class="winner-list__item">Дані відьом уже летять із ритуалу...</li>
+        </ul>
+      </section>
+
+      <div class="winner-actions">
+        <button class="coven-button winner-ritual-button" type="button" data-ritual-button data-next="../index.html#ritual">
+          Финальный ритуал
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/cursor.js" defer></script>
+  <script src="../assets/js/winner.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+/* Coven palette: #620A07, #FB1F17, #0C3C4A, #3E8989, #DBF9F4 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Cinzel Decorative', serif;
+  color: #DBF9F4;
+}
+
+body {
+  background: url('../../image/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: clamp(2rem, 6vh, 4rem);
+}
+
+.fog-overlay,
+.fog-drift {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fog-overlay {
+  background: radial-gradient(circle at center, rgba(8, 45, 65, 0.9), rgba(0, 0, 15, 0.95));
+  z-index: 10;
+  animation: fogReveal 16s ease-in-out infinite alternate;
+  filter: blur(26px);
+}
+
+.fog-drift {
+  background: radial-gradient(circle at 40% 60%, rgba(12, 60, 74, 0.36), rgba(0, 0, 30, 0.48));
+  z-index: 5;
+  opacity: 0.55;
+  animation: fogDrift 32s ease-in-out infinite alternate;
+  filter: blur(20px);
+}
+
+@keyframes fogReveal {
+  0% {
+    opacity: 0.65;
+    transform: scale(1.04);
+    filter: blur(26px);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+    filter: blur(30px);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1.02);
+    filter: blur(22px);
+  }
+}
+
+@keyframes fogDrift {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+
+  100% {
+    background-position: 50% 100%;
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+.back-link {
+  position: absolute;
+  top: clamp(1.6rem, 4vw, 2.2rem);
+  left: clamp(1.8rem, 4.5vw, 2.6rem);
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: none;
+  color: rgba(219, 249, 244, 0.88);
+  font-size: 0.95rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 40;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  opacity: 0.8;
+  transform: translateX(-6px);
+}
+
+.winner-layout {
+  position: relative;
+  z-index: 30;
+  width: min(92vw, 960px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.8rem, 4vw, 2.8rem);
+  width: 100%;
+  padding: clamp(2.6rem, 5vw, 4rem) clamp(2.4rem, 6vw, 4.4rem);
+  border-radius: 36px;
+  background:
+    linear-gradient(140deg, rgba(12, 60, 74, 0.62), rgba(0, 0, 0, 0.6));
+  box-shadow:
+    0 48px 120px rgba(0, 0, 0, 0.7),
+    inset 0 0 160px rgba(12, 60, 74, 0.26);
+  border: 1.5px solid rgba(62, 137, 137, 0.32);
+  backdrop-filter: blur(12px);
+}
+
+.winner-card > :not(.winner-confetti) {
+  position: relative;
+  z-index: 1;
+}
+
+.winner-card::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 28px;
+  border: 1px solid rgba(219, 249, 244, 0.18);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(251, 31, 23, 0.24), transparent 65%),
+    radial-gradient(60% 90% at 80% 85%, rgba(219, 249, 244, 0.22), transparent 85%);
+  pointer-events: none;
+}
+
+.winner-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.winner-header__eyebrow {
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.72);
+}
+
+.winner-header__title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: clamp(0.18em, 0.6vw, 0.28em);
+  color: #FB1F17;
+  text-shadow:
+    0 0 25px rgba(251, 31, 23, 0.65),
+    0 0 55px rgba(251, 31, 23, 0.35);
+}
+
+.winner-spotlight {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: clamp(0.8rem, 2vw, 1.4rem);
+  padding: clamp(2.4rem, 5vw, 3.6rem) clamp(1.6rem, 3vw, 2.4rem);
+  border-radius: 28px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(251, 31, 23, 0.32), rgba(12, 60, 74, 0.3)),
+    radial-gradient(120% 120% at 50% 100%, rgba(219, 249, 244, 0.16), rgba(0, 0, 0, 0.6));
+  border: 1px solid rgba(251, 31, 23, 0.45);
+  box-shadow:
+    0 0 60px rgba(251, 31, 23, 0.45),
+    inset 0 0 42px rgba(251, 31, 23, 0.2);
+  overflow: hidden;
+}
+
+.winner-spotlight::before,
+.winner-spotlight::after {
+  content: '';
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(219, 249, 244, 0.25) 90deg,
+    transparent 180deg,
+    rgba(251, 31, 23, 0.25) 270deg,
+    transparent 360deg
+  );
+  animation: aurora 12s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.winner-spotlight::after {
+  animation-direction: reverse;
+  animation-duration: 18s;
+  opacity: 0.6;
+}
+
+@keyframes aurora {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.winner-announcement {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.85);
+}
+
+.winner-name {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: clamp(0.08em, 0.4vw, 0.18em);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  text-shadow:
+    0 0 25px rgba(251, 31, 23, 0.65),
+    0 0 80px rgba(251, 31, 23, 0.45);
+  animation: winnerGlow 3.8s ease-in-out infinite;
+}
+
+@keyframes winnerGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 25px rgba(251, 31, 23, 0.7),
+      0 0 90px rgba(251, 31, 23, 0.45);
+    transform: scale(1);
+  }
+
+  50% {
+    text-shadow:
+      0 0 45px rgba(251, 31, 23, 0.9),
+      0 0 120px rgba(219, 249, 244, 0.45);
+    transform: scale(1.04);
+  }
+}
+
+.winner-score {
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.85);
+}
+
+.winner-score__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4ch;
+  margin: 0 0.4em;
+  padding: 0.2em 0.6em;
+  border-radius: 999px;
+  background: rgba(219, 249, 244, 0.12);
+  color: #FB1F17;
+  font-size: 1em;
+  text-shadow: 0 0 24px rgba(251, 31, 23, 0.45);
+  box-shadow: inset 0 0 18px rgba(251, 31, 23, 0.32);
+}
+
+.winner-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(219, 249, 244, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(251, 31, 23, 0.18), transparent 55%),
+    radial-gradient(circle at 40% 80%, rgba(62, 137, 137, 0.18), transparent 60%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  animation: shimmer 6s ease-in-out infinite;
+  transition: opacity 0.6s ease;
+}
+
+.winner-confetti.is-visible {
+  opacity: 0.55;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: translate3d(-1%, -1%, 0) scale(1.02);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate3d(1%, 1%, 0) scale(1.04);
+    opacity: 0.7;
+  }
+}
+
+.winner-summary {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.6rem);
+}
+
+.winner-summary__title {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(219, 249, 244, 0.72);
+  text-align: center;
+}
+
+.winner-list {
+  list-style: none;
+  display: grid;
+  gap: clamp(0.6rem, 1.6vw, 1rem);
+}
+
+.winner-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid rgba(219, 249, 244, 0.18);
+  background: rgba(12, 60, 74, 0.26);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.05em;
+}
+
+.winner-list__item.is-winner {
+  border-color: rgba(251, 31, 23, 0.6);
+  background: rgba(251, 31, 23, 0.18);
+  box-shadow: 0 0 36px rgba(251, 31, 23, 0.3);
+}
+
+.winner-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.winner-ritual-button {
+  min-width: clamp(240px, 40vw, 320px);
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: clamp(1.6rem, 4vh, 2.4rem);
+  }
+
+  .winner-card {
+    gap: clamp(1.4rem, 6vw, 2rem);
+    padding: clamp(2rem, 6vw, 3rem);
+  }
+
+  .winner-spotlight {
+    padding: clamp(1.8rem, 6vw, 2.6rem) clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .winner-name {
+    font-size: clamp(2.4rem, 10vw, 3.6rem);
+  }
+}

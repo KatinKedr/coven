@@ -527,178 +527,6 @@ document.addEventListener('DOMContentLoaded', () => {
         task: "Пусть ведьма напротив спросит 'что ждёт меня?', а ты ответь первой мыслью, что придёт.",
       },
     ],
-    'aux-2': [
-      {
-        id: 1,
-        question: 'Парадокс Лжеца — утверждение «Это предложение ложно» — истинное или ложное.',
-        category: 'Философия',
-      },
-      {
-        id: 2,
-        question: 'Парадокс Корабля Тесея — если заменить все детали корабля, остаётся ли он тем же самым?',
-        category: 'Философия',
-      },
-      {
-        id: 3,
-        question: 'Парадокс Неожиданной Казни — заключённый знает, что его казнят неожиданно, и потому это становится невозможным.',
-        category: 'Философия',
-      },
-      {
-        id: 4,
-        question: 'Парадокс Толерантности — можно ли быть абсолютно толерантным, ведь это предполагает толерантность к нетолерантным?',
-        category: 'Философия',
-      },
-      {
-        id: 5,
-        question: 'Парадокс Всемогущества — может ли всемогущий создать камень, который сам не сможет поднять?',
-        category: 'Философия',
-      },
-      {
-        id: 6,
-        question: 'Парадокс Мено — если человек не знает, что ищет, как он узнает, что нашёл именно это?',
-        category: 'Философия',
-      },
-      {
-        id: 7,
-        question: 'Парадокс Телепортации — если человека разобрать и собрать заново, будет ли это тот же самый человек?',
-        category: 'Философия',
-      },
-      {
-        id: 8,
-        question: 'Парадокс Буриданова Осла — осёл, стоящий между двумя одинаковыми стогами, не может выбрать и умирает от голода.',
-        category: 'Философия',
-      },
-      {
-        id: 9,
-        question: 'Парадокс Зла — если Бог всеблаг и всемогущ, почему существует зло?',
-        category: 'Философия',
-      },
-      {
-        id: 10,
-        question: 'Парадокс Бесконечной Регрессии — каждое объяснение требует другого объяснения, и так бесконечно.',
-        category: 'Философия',
-      },
-      {
-        id: 11,
-        question: 'Парадокс Идентичности — как определить, что объект остаётся тем же самым, если он постоянно меняется?',
-        category: 'Философия',
-      },
-      {
-        id: 12,
-        question: 'Парадокс Рационального Выбора — если два варианта равны, рациональный выбор становится невозможным.',
-        category: 'Философия',
-      },
-      {
-        id: 13,
-        question: 'Парадокс Наблюдателя — сам акт наблюдения изменяет наблюдаемый объект.',
-        category: 'Философия',
-      },
-      {
-        id: 14,
-        question: 'Парадокс Свободы Воли — если всё предопределено, возможен ли свободный выбор?',
-        category: 'Философия',
-      },
-      {
-        id: 15,
-        question: 'Парадокс Истины — если истины могут противоречить друг другу, существует ли абсолютная истина?',
-        category: 'Философия',
-      },
-      {
-        id: 16,
-        question: 'Парадокс Знания — если ты знаешь, что чего-то не знаешь, значит, ты это уже частично знаешь.',
-        category: 'Философия',
-      },
-      {
-        id: 17,
-        question: 'Парадокс Времени и Изменения — если всё постоянно изменяется, существует ли вообще понятие «теперь»?',
-        category: 'Философия',
-      },
-      {
-        id: 18,
-        question: 'В каком веке прошли знаменитые Салемские ведьмовские процессы?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 19,
-        question: 'Какой цвет традиционно ассоциировался с ведьмами и магией?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 20,
-        question: 'Какое животное считалось ведьминским фамильяром в Европе?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 21,
-        question: 'Какое наказание чаще всего назначалось обвинённым ведьмам?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 22,
-        question: 'Какой день недели считался ведьминским?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 23,
-        question: 'Как называется современная религия, основанная на культе природы и магии?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 24,
-        question: 'Как называется книга заклинаний ведьмы?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 25,
-        question: 'Что означает слово “Wicca”?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 26,
-        question: 'Что такое “алтарь” в практике ведьм?',
-        category: 'Ведьмы',
-      },
-      {
-        id: 27,
-        question: 'Что алхимики называли prima materia — первовеществом всего существующего?',
-        category: 'Алхимия',
-      },
-      {
-        id: 28,
-        question: 'Что символизировал философский камень в духовном смысле?',
-        category: 'Алхимия',
-      },
-      {
-        id: 29,
-        question: 'Как назывался процесс превращения неблагородных металлов в золото?',
-        category: 'Алхимия',
-      },
-      {
-        id: 30,
-        question: 'Какой металл связывали с Солнцем?',
-        category: 'Алхимия',
-      },
-      {
-        id: 31,
-        question: 'Какой металл считался под покровительством Луны?',
-        category: 'Алхимия',
-      },
-      {
-        id: 32,
-        question: 'Что означал знак змея, кусающего свой хвост — уроборос?',
-        category: 'Алхимия',
-      },
-      {
-        id: 33,
-        question: 'Какое животное символизировало возрождение из пепла?',
-        category: 'Алхимия',
-      },
-      {
-        id: 34,
-        question: 'Что означало соединение Солнца и Луны в алхимическом тексте?',
-        category: 'Алхимия',
-      },
-    ],
   };
 
   const deckStates = new Map();
@@ -857,21 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const trimmedTask = card.task.trim();
       if (trimmedTask.length > 0) {
         return trimmedTask;
-      }
-    }
-
-    return '';
-  };
-
-  const getCardCategory = (card) => {
-    if (!card || typeof card !== 'object') {
-      return '';
-    }
-
-    if (typeof card.category === 'string') {
-      const trimmedCategory = card.category.trim();
-      if (trimmedCategory.length > 0) {
-        return trimmedCategory;
       }
     }
 
@@ -1102,30 +915,18 @@ document.addEventListener('DOMContentLoaded', () => {
       deckButton.addEventListener('click', () => {
         const deckId = typeof deckButton.dataset.gameDeck === 'string' ? deckButton.dataset.gameDeck.trim() : '';
         let popupContent = '';
-        let popupCategory = '';
 
         if (deckId.length > 0) {
           const card = drawCardFromDeck(deckId);
           const cardText = getCardText(card);
           if (cardText.length > 0) {
             popupContent = cardText;
-            popupCategory = getCardCategory(card);
           } else if (deckDefinitions[deckId]) {
             popupContent = 'В этой колоде пока нет карт.';
           }
         }
 
-        if (popupContent.length > 0) {
-          deckButton.dataset.deckContent = popupContent;
-        } else {
-          delete deckButton.dataset.deckContent;
-        }
-
-        if (popupCategory.length > 0) {
-          deckButton.dataset.deckCategory = popupCategory;
-        } else {
-          delete deckButton.dataset.deckCategory;
-        }
+        deckButton.dataset.deckContent = popupContent;
 
         openDeckPopup(deckButton);
       });
@@ -1146,6 +947,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!target) {
         return;
       }
+
+      const summary = playersData.map((player, index) => {
+        const score = Number.isFinite(scores[index]) ? scores[index] : 0;
+        return {
+          name: typeof player.name === 'string' && player.name.length > 0 ? player.name : `Игрок ${index + 1}`,
+          score,
+        };
+      });
+
+      const bestScore = summary.reduce((max, entry) => (entry.score > max ? entry.score : max), summary.length > 0 ? summary[0].score : 0);
+      const winners = summary.filter((entry) => entry.score === bestScore);
+
+      const payload = {
+        winners,
+        bestScore,
+        summary,
+        generatedAt: new Date().toISOString(),
+      };
+
+      try {
+        sessionStorage.setItem('covenWinner', JSON.stringify(payload));
+      } catch (error) {
+        console.warn('Не удалось сохранить информацию о победителе', error);
+      }
+
       const resolved = new URL(target, window.location.href);
       window.location.assign(resolved.href);
     });
