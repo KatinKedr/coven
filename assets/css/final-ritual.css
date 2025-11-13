@@ -126,10 +126,10 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.6rem, 2.4vw, 2.4rem);
+  gap: clamp(1.2rem, 2vw, 2rem);
   width: min(84vw, 720px);
-  max-height: min(80vh, 640px);
-  padding: clamp(2.4rem, 4.2vw, 3.6rem) clamp(2.4rem, 5vw, 3.6rem) clamp(2.8rem, 6vw, 4rem);
+  max-height: min(86vh, 640px);
+  padding: clamp(2.1rem, 3.6vw, 3.2rem) clamp(2.2rem, 4.4vw, 3.4rem) clamp(2.4rem, 5.2vw, 3.6rem);
   border-radius: 30px;
   border: 1.5px solid rgba(251, 31, 23, 0.78);
   background:
@@ -203,27 +203,29 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.4rem, 2.4vw, 2rem);
+  gap: clamp(1.1rem, 2vw, 1.6rem);
+  flex: 1 1 auto;
+  min-height: 0;
   z-index: 1;
 }
 
 .ritual-body__controls {
   position: absolute;
-  top: clamp(-0.4rem, -0.6vw, -0.2rem);
-  right: 0;
+  top: clamp(-1.4rem, -1.8vw, -0.8rem);
+  right: clamp(0rem, 0.6vw, 0.4rem);
   display: flex;
-  gap: clamp(0.2rem, 0.8vw, 0.6rem);
+  gap: clamp(0.1rem, 0.6vw, 0.5rem);
   z-index: 2;
 }
 
 .ritual-body__arrow {
-  width: clamp(32px, 5vw, 40px);
+  width: clamp(28px, 4.4vw, 36px);
   aspect-ratio: 1 / 1;
   border: 1px solid rgba(219, 249, 244, 0.38);
   border-radius: 50%;
   background: rgba(12, 60, 74, 0.45);
   color: rgba(219, 249, 244, 0.85);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -246,18 +248,22 @@ body {
 
 .ritual-slides {
   position: relative;
-  min-height: clamp(220px, 32vh, 320px);
-  padding-top: clamp(0.8rem, 1.8vw, 1.2rem);
+  display: flex;
+  flex-direction: column;
+  height: clamp(260px, 38vh, 360px);
+  padding-top: clamp(0.6rem, 1.4vw, 1rem);
 }
 
 .ritual-slide {
   display: none;
   height: 100%;
-  padding-right: clamp(0.3rem, 1vw, 0.9rem);
+  padding-right: clamp(0.2rem, 0.9vw, 0.8rem);
   overflow-y: auto;
 }
 
 .no-js .ritual-slides {
+  display: block;
+  height: auto;
   padding-top: 0;
 }
 
@@ -291,10 +297,10 @@ body {
 .ritual-intro {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.9rem, 1.8vw, 1.2rem);
-  font-size: clamp(1.08rem, 2.3vw, 1.28rem);
-  line-height: 1.72;
-  letter-spacing: 0.025em;
+  gap: clamp(0.7rem, 1.5vw, 1.05rem);
+  font-size: clamp(1rem, 2.1vw, 1.18rem);
+  line-height: 1.68;
+  letter-spacing: 0.02em;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -302,10 +308,10 @@ body {
 .ritual-steps {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.4rem, 2.2vw, 1.8rem);
-  font-size: clamp(1rem, 2.1vw, 1.18rem);
-  line-height: 1.68;
-  letter-spacing: 0.02em;
+  gap: clamp(1rem, 1.8vw, 1.4rem);
+  font-size: clamp(0.96rem, 1.9vw, 1.12rem);
+  line-height: 1.62;
+  letter-spacing: 0.015em;
 }
 
 .ritual-steps::-webkit-scrollbar {
@@ -318,9 +324,9 @@ body {
 }
 
 .ritual-steps__title {
-  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  font-size: clamp(1.12rem, 2.4vw, 1.45rem);
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-align: center;
   color: rgba(219, 249, 244, 0.78);
 }
@@ -328,12 +334,12 @@ body {
 .ritual-step {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .ritual-step__title {
-  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  letter-spacing: 0.12em;
+  font-size: clamp(1.02rem, 2vw, 1.26rem);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(219, 249, 244, 0.82);
 }
@@ -349,9 +355,9 @@ body {
 }
 
 .ritual-incantation {
-  font-size: clamp(1.08rem, 2.4vw, 1.32rem);
+  font-size: clamp(1rem, 2.2vw, 1.26rem);
   text-align: center;
-  padding: clamp(0.6rem, 1.8vw, 0.9rem) clamp(1rem, 2.4vw, 1.6rem);
+  padding: clamp(0.52rem, 1.6vw, 0.82rem) clamp(0.9rem, 2.2vw, 1.4rem);
   background: rgba(12, 60, 74, 0.4);
   border: 1px solid rgba(219, 249, 244, 0.28);
   border-radius: 18px;
@@ -359,6 +365,23 @@ body {
   text-shadow:
     0 0 18px rgba(251, 31, 23, 0.35),
     0 0 28px rgba(12, 60, 74, 0.55);
+}
+
+.ritual-slide::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ritual-slide::-webkit-scrollbar-thumb {
+  background: rgba(219, 249, 244, 0.24);
+  border-radius: 3px;
+}
+
+.ritual-slide--rules {
+  padding-right: clamp(0.3rem, 1vw, 0.9rem);
+}
+
+.ritual-slide--rules .ritual-steps {
+  padding-right: clamp(0.1rem, 0.6vw, 0.4rem);
 }
 
 .ritual-footer {
@@ -448,8 +471,8 @@ body {
     max-height: none;
   }
 
-  .ritual-slide {
-    max-height: none;
+  .ritual-slides {
+    height: clamp(240px, 52vh, 360px);
   }
 }
 
