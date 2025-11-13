@@ -321,46 +321,6 @@ body {
   }
 }
 
-.winner-summary {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  gap: clamp(1rem, 2vw, 1.6rem);
-}
-
-.winner-summary__title {
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(219, 249, 244, 0.72);
-  text-align: center;
-}
-
-.winner-list {
-  list-style: none;
-  display: grid;
-  gap: clamp(0.6rem, 1.6vw, 1rem);
-}
-
-.winner-list__item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.9rem 1.4rem;
-  border-radius: 16px;
-  border: 1px solid rgba(219, 249, 244, 0.18);
-  background: rgba(12, 60, 74, 0.26);
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  letter-spacing: 0.05em;
-}
-
-.winner-list__item.is-winner {
-  border-color: rgba(251, 31, 23, 0.6);
-  background: rgba(251, 31, 23, 0.18);
-  box-shadow: 0 0 36px rgba(251, 31, 23, 0.3);
-}
-
 .winner-actions {
   position: relative;
   z-index: 2;

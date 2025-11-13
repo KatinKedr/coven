@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nameField = document.querySelector('[data-winner-name]');
   const scoreField = document.querySelector('[data-winner-score]');
-  const listContainer = document.querySelector('[data-winner-list]');
   const announcementField = document.querySelector('[data-winner-announcement]');
   const ritualButton = document.querySelector('[data-ritual-button]');
   const confetti = document.querySelector('[data-winner-confetti]');
@@ -25,11 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const summary = Array.isArray(payload.summary) ? payload.summary : [];
   const winners = Array.isArray(payload.winners) ? payload.winners : [];
   const bestScore = Number.isFinite(payload.bestScore) ? payload.bestScore : 0;
 
-  if (summary.length === 0 || winners.length === 0) {
+  if (winners.length === 0) {
     window.location.replace('game.html');
     return;
   }
@@ -52,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (winnerNames.length === 1) {
     if (announcementField) {
-      announcementField.textContent = 'Переможець ритуалу';
+      announcementField.textContent = 'Победитель ритуала';
     }
     if (nameField) {
       nameField.textContent = winnerNames[0];
     }
   } else {
     if (announcementField) {
-      announcementField.textContent = 'Переможці ритуалу';
+      announcementField.textContent = 'Победители ритуала';
     }
     if (nameField) {
       nameField.textContent = winnerNames.join(' ✶ ');
@@ -72,34 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (confetti) {
     confetti.classList.add('is-visible');
-  }
-
-  if (listContainer instanceof HTMLElement) {
-    listContainer.innerHTML = '';
-
-    summary
-      .map((entry, index) => ({
-        name: formatName(entry.name),
-        score: Number.isFinite(entry.score) ? entry.score : 0,
-        index,
-      }))
-      .sort((a, b) => b.score - a.score || a.index - b.index)
-      .forEach((entry) => {
-        const item = document.createElement('li');
-        item.className = 'winner-list__item';
-        if (entry.score === bestScore) {
-          item.classList.add('is-winner');
-        }
-
-        const name = document.createElement('span');
-        name.textContent = entry.name;
-
-        const score = document.createElement('span');
-        score.textContent = `${entry.score} балів`;
-
-        item.append(name, score);
-        listContainer.append(item);
-      });
   }
 
   if (ritualButton) {
