@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.remove('no-js');
+  const ritualRoot = document.querySelector('[data-ritual-root]');
+  ritualRoot?.classList.remove('no-js');
 
   const slides = Array.from(document.querySelectorAll('[data-slide]'));
   const prevButton = document.querySelector('[data-slide-prev]');

@@ -35,7 +35,7 @@ const createCardElement = (index) => {
   button.setAttribute('aria-label', `Выбрать карту роли номер ${index + 1}`);
 
   const image = document.createElement('img');
-  image.src = '../image/deck-char.png';
+  image.src = 'image/deck-char.png';
   image.alt = 'Карта роли';
   image.loading = 'lazy';
 
@@ -118,7 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (storedNames.length === 0) {
-    window.location.replace('players.html');
+    document.addEventListener('coven:screen:show', (event) => {
+      if (event?.detail?.screen === 'roles' && typeof window.covenNavigate === 'function') {
+        window.covenNavigate('players');
+      }
+    });
     return;
   }
 
@@ -437,12 +441,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (continueBtn) {
     continueBtn.addEventListener('click', () => {
-      const target = continueBtn.dataset.next;
+      const target = continueBtn.dataset.nextScreen;
       if (!target) {
         return;
       }
-      const resolved = new URL(target, window.location.href);
-      window.location.assign(resolved.href);
+      if (typeof window.covenNavigate === 'function') {
+        window.covenNavigate(target);
+      }
     });
   }
 

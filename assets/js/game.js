@@ -725,7 +725,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const storedAssignments = parseStoredArray(sessionStorage.getItem('covenAssignments'));
 
   if (storedNames.length === 0) {
-    window.location.replace('players.html');
+    document.addEventListener('coven:screen:show', (event) => {
+      if (event?.detail?.screen === 'game' && typeof window.covenNavigate === 'function') {
+        window.covenNavigate('players');
+      }
+    });
     return;
   }
 
@@ -751,7 +755,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const hasAllRoles = playersData.every((player) => player.roleTitle.length > 0);
   if (!hasAllRoles) {
-    window.location.replace('roles.html');
+    document.addEventListener('coven:screen:show', (event) => {
+      if (event?.detail?.screen === 'game' && typeof window.covenNavigate === 'function') {
+        window.covenNavigate('roles');
+      }
+    });
     return;
   }
 
@@ -1141,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (finishBtn) {
     finishBtn.addEventListener('click', () => {
-      const target = finishBtn.dataset.next;
+      const target = finishBtn.dataset.nextScreen;
       if (!target) {
         return;
       }
@@ -1170,8 +1178,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Не удалось сохранить информацию о победителе', error);
       }
 
-      const resolved = new URL(target, window.location.href);
-      window.location.assign(resolved.href);
+      if (typeof window.covenNavigate === 'function') {
+        window.covenNavigate(target);
+      }
     });
   }
 

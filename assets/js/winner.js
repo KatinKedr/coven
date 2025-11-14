@@ -6,8 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const confetti = document.querySelector('[data-winner-confetti]');
 
   const raw = sessionStorage.getItem('covenWinner');
+  const scheduleRedirectToGame = (() => {
+    let scheduled = false;
+    return () => {
+      if (scheduled) {
+        return;
+      }
+      scheduled = true;
+      document.addEventListener('coven:screen:show', (event) => {
+        if (event?.detail?.screen === 'winner' && typeof window.covenNavigate === 'function') {
+          window.covenNavigate('game');
+        }
+      });
+    };
+  })();
+
   if (!raw) {
-    window.location.replace('game.html');
+    scheduleRedirectToGame();
     return;
   }
 
@@ -20,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (!payload || typeof payload !== 'object') {
-    window.location.replace('game.html');
+    scheduleRedirectToGame();
     return;
   }
 
@@ -28,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bestScore = Number.isFinite(payload.bestScore) ? payload.bestScore : 0;
 
   if (winners.length === 0) {
-    window.location.replace('game.html');
+    scheduleRedirectToGame();
     return;
   }
 
@@ -79,12 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {
         console.warn('Не удалось очистить данные победителя', error);
       }
-      const target = ritualButton.dataset.next;
+      const target = ritualButton.dataset.nextScreen;
       if (!target) {
         return;
       }
-      const resolved = new URL(target, window.location.href);
-      window.location.assign(resolved.href);
+      if (typeof window.covenNavigate === 'function') {
+        window.covenNavigate(target);
+      }
     });
   }
 });

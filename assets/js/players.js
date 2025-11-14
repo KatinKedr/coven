@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       continueBtn.textContent = 'Подожди…';
     }
 
-    const target = continueBtn?.dataset?.next;
-    const resolvedTarget = target ? new URL(target, window.location.href).href : null;
+    const targetScreen = continueBtn?.dataset?.nextScreen;
 
     window.setTimeout(() => {
       if (continueBtn) {
@@ -82,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         continueBtn.disabled = false;
       }
 
-      if (resolvedTarget) {
-        window.location.assign(resolvedTarget);
+      if (typeof window.covenNavigate === 'function' && targetScreen) {
+        window.covenNavigate(targetScreen);
       }
     }, 300);
   });
